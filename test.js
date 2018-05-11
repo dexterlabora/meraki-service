@@ -5,22 +5,26 @@ const Meraki = require('./meraki-service');
 const API_KEY = "2f301bccd61b6c642d250cd3f76e5eb66ebd170f" // Sandbox API Key
 const API_URL = 'https://api.meraki.com/api/v0'
 
-const orgId = '306267';
-const netId = 'L_643451796760560141';
-const deviceMac = '88:15:44:60:1c:1a';
+const orgId = '549236';
+const netId = 'L_646829496481095933';
+const deviceMac = 'e0:55:3d:10:42:a6;
 
 
 // Initialize Meraki
 const meraki = new Meraki(API_KEY,API_URL);
 
-
+// ********************
 // Various test scripts
+//  - uncomment out any section of code and run:   $ node test
+// ********************
 
 
 meraki.getOrganizations().then(res => {
     console.log('Organizations: ', res.data);
 });
 
+
+/*
 const proxyOptions = {
     url: '/organizations',
     method: 'get',
@@ -31,6 +35,7 @@ const proxyOptions = {
 meraki.proxy(proxyOptions).then(res => {
     console.log('Organizations proxied with custom headers: ', res.data);
 });
+*/
 
 
 /*
@@ -54,6 +59,12 @@ meraki.getClientsForOrg('306267', 86400).then(res => {
 });
 */
 
+
+meraki.getInventory(orgId, 86400).then(res => {
+    console.log('inventory: ', res.data);
+});
+
+
 /*
 const devices = [
     {
@@ -74,10 +85,16 @@ const networks = [
         id: 'L_643451796760560141',
     },
     {
-        id: 'N_643451796760559911',
+        id: 'L_646829496481098845',
     }
 ]
-meraki.getClientsForNetworks(networks, 86400).then(res => {
+meraki.getClientsForNetworks(networks, 864000000).then(res => {
+    console.log('Clients: ', JSON.stringify(res.data));
+});
+*/
+
+/*
+meraki.getClientsForOrg(orgId, 864000).then(res => {
     console.log('Clients: ', JSON.stringify(res.data));
 });
 */
@@ -109,6 +126,7 @@ meraki.getNetworkIdForDeviceMac(orgId, deviceMac).then((res) => {
     console.log('Network for device: ',deviceMac, res.data);
 });
 */
+
 /*
 const clients = [
     { mac: "d0:2b:20:91:90:67"},
