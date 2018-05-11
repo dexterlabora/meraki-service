@@ -30,6 +30,7 @@ npm install meraki-service
 
 ## Usage
 
+## API endpoint methods
 
 ```
 // index.js
@@ -44,7 +45,7 @@ meraki.getOrganizations().then(res => {
 
 
 
-// As an Express API proxy
+## As an Express API proxy
 
 ```
 app.use('/api', jsonParser, function (req, res){
