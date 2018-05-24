@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>endpoints/custom.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav class="nav">
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Admins.html">Admins</a><ul class='methods'><li data-type='method'><a href="module-Admins.html#.createAdmin">createAdmin</a></li></ul></li><li><a href="module-Clients.html">Clients</a><ul class='methods'><li data-type='method'><a href="module-Clients.html#.getClientPolicy">getClientPolicy</a></li><li data-type='method'><a href="module-Clients.html#.getClients">getClients</a></li><li data-type='method'><a href="module-Clients.html#.getSplashAuth">getSplashAuth</a></li><li data-type='method'><a href="module-Clients.html#.updateClientPolicy">updateClientPolicy</a></li><li data-type='method'><a href="module-Clients.html#.updateSplashAuth">updateSplashAuth</a></li></ul></li><li><a href="module-Custom.html">Custom</a><ul class='methods'><li data-type='method'><a href="module-Custom.html#.getClientPolicyForClients">getClientPolicyForClients</a></li><li data-type='method'><a href="module-Custom.html#.getClientsForDevices">getClientsForDevices</a></li><li data-type='method'><a href="module-Custom.html#.getClientsForNetwork">getClientsForNetwork</a></li><li data-type='method'><a href="module-Custom.html#.getClientsForNetworks">getClientsForNetworks</a></li><li data-type='method'><a href="module-Custom.html#.getClientsForOrg">getClientsForOrg</a></li><li data-type='method'><a href="module-Custom.html#.getNetworkIdForDeviceMac">getNetworkIdForDeviceMac</a></li></ul></li><li><a href="module-Devices.html">Devices</a><ul class='methods'><li data-type='method'><a href="module-Devices.html#.claimDevice">claimDevice</a></li><li data-type='method'><a href="module-Devices.html#.getDevice">getDevice</a></li><li data-type='method'><a href="module-Devices.html#.getDevices">getDevices</a></li><li data-type='method'><a href="module-Devices.html#.getPerfScore">getPerfScore</a></li><li data-type='method'><a href="module-Devices.html#.getUplinkStatus">getUplinkStatus</a></li><li data-type='method'><a href="module-Devices.html#.removeDevice">removeDevice</a></li><li data-type='method'><a href="module-Devices.html#.updateDevice">updateDevice</a></li></ul></li><li><a href="module-Meraki.html">Meraki</a></li><li><a href="module-Pii.html">Pii</a><ul class='methods'><li data-type='method'><a href="module-Pii.html#.deletePiiRequest">deletePiiRequest</a></li><li data-type='method'><a href="module-Pii.html#.getPiiKeys">getPiiKeys</a></li><li data-type='method'><a href="module-Pii.html#.getPiiRequest">getPiiRequest</a></li><li data-type='method'><a href="module-Pii.html#.getPiiRequests">getPiiRequests</a></li><li data-type='method'><a href="module-Pii.html#.getSmDevicesForKey">getSmDevicesForKey</a></li><li data-type='method'><a href="module-Pii.html#.getSmOwnersForKey">getSmOwnersForKey</a></li><li data-type='method'><a href="module-Pii.html#.submitPiiRequest">submitPiiRequest</a></li></ul></li><li><a href="module-Proxy.html">Proxy</a></li><li><a href="module-Settings.html">Settings</a></li></ul><h3>Classes</h3><ul><li><a href="module-Meraki-merakiService.html">merakiService</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">endpoints/custom.js</h1>
+    
+
+    <!--container.tmpl-->
+
+
+
+
+    <!--source.tmpl-->
+
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const custom = {
+    // **************
+    // Custom Scripts
+    // **************
+
+    /*
+    These scripts are helfpul for iterating through API endpoints, chaining data or returing enhanced results.
+    */
+    /**
+     * Custom Scripts
+     * @module Custom
+     */
+
+    /**
+     * Get the network ID for a Meraki Device using its MAC address
+     * @memberof module:Custom
+     * @async
+     * @param {string} orgId - Meraki Organization ID
+     * @param {string} mac - Meraki device MAC address
+     */
+    async getNetworkIdForDeviceMac(orgId, mac) {
+        const device = await this.getOrgDevices(orgId).then((res) => {
+
+            const devices = [] = res.data.filter(function (obj) {
+                return obj.mac == mac;
+            });
+            console.log('filtered devices ', devices);
+            console.log('filtered network ID ', devices[0].networkId);
+            return devices[0];
+
+        });
+        let res = {
+            status: 200,
+            data: device.networkId
+        };
+        return res;
+    },
+
+    /**
+     * get clients for an organization within specified timespan
+     * @memberof module:Custom
+     * @param {string} orgId 
+     * @param {number=} [timespan=86400] - Timespan to search for clients in seconds
+     */
+    async getClientsForOrg(orgId, timespan = 86400) {
+        let devices = [] = await this.getOrgDevices(orgId).then((res) => { return res.data }); // doesn't return model type
+        console.log('devices in org', devices);
+        let clients = [];
+        for (let d of devices) {
+            try {
+                let c = await this.getClients(d.serial, timespan).then((res) => { return res.data });
+                console.log('Clients for device', c);
+                if (c.errors) { continue }
+                c.device = d;
+                clients.push(c);
+            } catch (e) {
+                continue;
+            }
+        }
+        let res = {
+            status: 200,
+            data: clients
+        };
+        return res;
+    },
+
+    /**
+     * get clients for devices
+     * @memberof module:Custom
+     * @param {Array} devices - Array of devices, `[{serial: abcd-asdf-asdf}, {serial: qwer-asdf-asdf}]`
+     * @param {number=} [timespan=86400] - Timespan to search for clients in seconds
+     * @param {string=} model - Meraki device model `MR`, `MS`, `MX`
+     */
+    async getClientsForDevices(devices, timespan = 86400, model ) {
+        let clients = [];
+        for (let d of devices) {
+            if (model) {
+                if (!d.model.includes(model)) { continue }
+            } else {
+                if (!d.model.includes("MR") &amp;&amp; !d.model.includes("MX") &amp;&amp; !d.model.includes("MS")) { continue }
+            }
+            try {
+                let c = await this.getClients(d.serial, timespan).then((res) => res.data);
+                if (c.errors) { continue }
+                c.device = d;
+                clients.push(c);
+            } catch (e) { continue }
+        }
+        let res = {
+            status: 200,
+            data: clients
+        };
+        return res;
+    },
+
+    /**
+     * get clients for devices
+     * @memberof module:Custom
+     * @param {Array} networks - Array of networks, `[{id: L_123456789}, {id: N_1234567890}]`
+     * @param {number=} [timespan=86400] - Timespan to search for clients in seconds
+     * @param {string=} model - Meraki device model `MR`, `MS`, `MX`
+     */
+    async getClientsForNetworks(networks, timespan = 86400, model) {
+        let clients = [];
+        for (let n of networks) {
+            if (model) {
+                if (!d.model.includes(model)) { continue }
+            }
+            try {
+                let c = await this.getClientsForNetwork(n.id, timespan, model).then((res) => res.data);
+                c.network = n;
+                clients.push(c);
+            } catch (e) { continue }
+        }
+        let res = {
+            status: 200,
+            data: clients
+        };
+        return res;
+    },
+
+    /**
+     * Synchronous script to traverse the Meraki API and display the clients and their policies
+     * @memberof module:Custom
+     * @param {string} networkId - Network ID `L_123456789`
+     * @param {number=} [timespan=86400] - Timespan to search for clients in seconds
+     * @param {string=} model - Meraki device model `MR`, `MS`, `MX`
+     */
+    async getClientsForNetwork(netId, timespan, model) {
+        // where model = "MR" MV MX MS MC or model name "MR33"
+        let devices = [] = await this.getDevices(netId).then((res) => res.data);
+        let clients = [];
+        for (let d of devices) {
+            if (model) {
+                if (!d.model.includes(model)) { continue }
+            }
+            try {
+                let c = await this.getClients(d.serial, timespan).then((res) => { return res.data });
+                c.device = d;
+                clients.push(c);
+            } catch (e) { continue }
+        }
+        let res = {
+            status: 200,
+            data: clients
+        };
+        return res;
+    },
+
+    /**
+     * gets the client policy for an array of clients in a network.
+     * @memberof module:Custom
+     * @param {Array} clients Array of clients with MAC property `[{mac: 'aa:bb:cc:dd:ee:ff}, {mac: 'bb:bb:cc:dd:ee:ff}]`
+     * @param {string} networkId - ID of network `L_123456789`
+     * @param {number=} [timespan=86400] - Timespan to search for clients
+     */
+    async getClientPolicyForClients(clients, netId, timespan = 86400) {
+        let allClients = [];
+        for (let c of clients) {
+            try {
+                const policy = await this.getClientPolicy(netId, c.mac, timespan).then((res) => { return res.data });
+                //console.log('policy', policy);
+                if (!policy.type) { continue }
+                //console.log(" - Policy type " + policy.type);
+                if (policy.groupPolicyId) {
+                    // console.log(" - ID: " + policy.groupPolicyId);
+                }
+                c.policy = policy;
+                allClients.push(c);
+            } catch (e) {
+                console.log('error getting client policy', e);
+                continue;
+            }
+        }
+        let res = {
+            status: 200,
+            data: allClients
+        };
+        return res;
+    }
+}
+
+module.exports = custom;</code></pre>
+        </article>
+    </section>
+
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue May 22 2018 18:28:13 GMT+0200 (CEST) using the LOKE theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

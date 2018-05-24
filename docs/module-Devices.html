@@ -1,0 +1,1846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Devices - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav class="nav">
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Admins.html">Admins</a><ul class='methods'><li data-type='method'><a href="module-Admins.html#.createAdmin">createAdmin</a></li></ul></li><li><a href="module-Clients.html">Clients</a><ul class='methods'><li data-type='method'><a href="module-Clients.html#.getClientPolicy">getClientPolicy</a></li><li data-type='method'><a href="module-Clients.html#.getClients">getClients</a></li><li data-type='method'><a href="module-Clients.html#.getSplashAuth">getSplashAuth</a></li><li data-type='method'><a href="module-Clients.html#.updateClientPolicy">updateClientPolicy</a></li><li data-type='method'><a href="module-Clients.html#.updateSplashAuth">updateSplashAuth</a></li></ul></li><li><a href="module-Custom.html">Custom</a><ul class='methods'><li data-type='method'><a href="module-Custom.html#.getClientPolicyForClients">getClientPolicyForClients</a></li><li data-type='method'><a href="module-Custom.html#.getClientsForDevices">getClientsForDevices</a></li><li data-type='method'><a href="module-Custom.html#.getClientsForNetwork">getClientsForNetwork</a></li><li data-type='method'><a href="module-Custom.html#.getClientsForNetworks">getClientsForNetworks</a></li><li data-type='method'><a href="module-Custom.html#.getClientsForOrg">getClientsForOrg</a></li><li data-type='method'><a href="module-Custom.html#.getNetworkIdForDeviceMac">getNetworkIdForDeviceMac</a></li></ul></li><li><a href="module-Devices.html">Devices</a><ul class='methods'><li data-type='method'><a href="module-Devices.html#.claimDevice">claimDevice</a></li><li data-type='method'><a href="module-Devices.html#.getDevice">getDevice</a></li><li data-type='method'><a href="module-Devices.html#.getDevices">getDevices</a></li><li data-type='method'><a href="module-Devices.html#.getPerfScore">getPerfScore</a></li><li data-type='method'><a href="module-Devices.html#.getUplinkStatus">getUplinkStatus</a></li><li data-type='method'><a href="module-Devices.html#.removeDevice">removeDevice</a></li><li data-type='method'><a href="module-Devices.html#.updateDevice">updateDevice</a></li></ul></li><li><a href="module-Meraki.html">Meraki</a></li><li><a href="module-Pii.html">Pii</a><ul class='methods'><li data-type='method'><a href="module-Pii.html#.deletePiiRequest">deletePiiRequest</a></li><li data-type='method'><a href="module-Pii.html#.getPiiKeys">getPiiKeys</a></li><li data-type='method'><a href="module-Pii.html#.getPiiRequest">getPiiRequest</a></li><li data-type='method'><a href="module-Pii.html#.getPiiRequests">getPiiRequests</a></li><li data-type='method'><a href="module-Pii.html#.getSmDevicesForKey">getSmDevicesForKey</a></li><li data-type='method'><a href="module-Pii.html#.getSmOwnersForKey">getSmOwnersForKey</a></li><li data-type='method'><a href="module-Pii.html#.submitPiiRequest">submitPiiRequest</a></li></ul></li><li><a href="module-Proxy.html">Proxy</a></li><li><a href="module-Settings.html">Settings</a></li></ul><h3>Classes</h3><ul><li><a href="module-Meraki-merakiService.html">merakiService</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Devices</h1>
+    
+
+    <!--container.tmpl-->
+
+
+
+
+
+<section>
+
+
+
+<header data-tmpl="container.tmpl">
+    
+      <h2>Module: Devices</h2>
+        
+            
+        
+    
+
+    
+      <div class="bs-callout bs-callout-default">
+        <h5>Members</h5>
+        <br />
+        <dl class="dl-horizontal methods-members">
+        <dt>Methods</dt><dd><ul>
+            <li><a href="#claimDevice">claimDevice</a></li>
+            
+            <li><a href="#getDevice">getDevice</a></li>
+            
+            <li><a href="#getDevices">getDevices</a></li>
+            
+            <li><a href="#getPerfScore">getPerfScore</a></li>
+            
+            <li><a href="#getUplinkStatus">getUplinkStatus</a></li>
+            
+            <li><a href="#removeDevice">removeDevice</a></li>
+            
+            <li><a href="#updateDevice">updateDevice</a></li>
+            </ul></dd></dl></div>
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Devices</p></div>
+        
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="endpoints_devices.js.html">devices.js</a>:<a href="endpoints_devices.js.html#line1">1</a>
+  </code>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-Devices">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="endpoints_devices.js.html">devices.js</a>:<a href="endpoints_devices.js.html#line1">1</a>
+  </code>
+</div>
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * Devices\n * @module Devices\n */","meta":{"filename":"devices.js","lineno":1,"columnno":0,"path":"/Users/cory.guynn/dev/meraki-service/endpoints","code":{},"shortpath":"endpoints/devices.js"},"description":"<p>Devices</p>","kind":"module","name":"Devices","longname":"module:Devices","___id":"T000002R000113","___s":true,"attribs":"","id":"Devices","ancestors":[]}
+</pre>
+-->
+</div>
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="endpoints_devices.js.html">devices.js</a>:<a href="endpoints_devices.js.html#line68">68</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id=".claimDevice">
+      <a href="#params-claimDevice"><span class="type-signature">(static) </span>claimDevice</a><span class="signature">(netId, body)</span><span class="type-signature"> &rarr; {Promise}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>claim a device</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-claimDevice">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-claimDevice" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>netId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n     * claim a device\n     * @memberof module:Devices\n     * @param {*} netId \n     * @param {*} body \n     * @return { Promise } \n     */","meta":{"range":[1944,2080],"filename":"devices.js","lineno":68,"columnno":4,"path":"/Users/cory.guynn/dev/meraki-service/endpoints","code":{"id":"astnode100001733","name":"claimDevice","type":"FunctionExpression"},"vars":{"":null},"shortpath":"endpoints/devices.js"},"description":"<p>claim a device</p>","memberof":"module:Devices","params":[{"type":{"names":["*"]},"name":"netId"},{"type":{"names":["*"]},"name":"body"}],"returns":[{"type":{"names":["Promise"]}}],"name":"claimDevice","longname":"module:Devices.claimDevice","kind":"function","scope":"static","___id":"T000002R000120","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".claimDevice","signature":"<span class=\"signature\">(netId, body)</span><span class=\"type-signature\"> &rarr; {Promise}</span>","ancestors":["<a href=\"module-Devices.html\">Devices</a>."]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="endpoints_devices.js.html">devices.js</a>:<a href="endpoints_devices.js.html#line23">23</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id=".getDevice">
+      <a href="#params-getDevice"><span class="type-signature">(static) </span>getDevice</a><span class="signature">(netId, serial)</span><span class="type-signature"> &rarr; {Promise}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>return a single device in a network</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getDevice">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-getDevice" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>netId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>serial</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+<div class="param-desc">
+    <p>A promise holding the device object</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n     * return a single device in a network\n     * @memberof module:Devices\n     * @param {*} netId \n     * @param {*} serial \n     * @return { Promise } A promise holding the device object\n     */","meta":{"range":[560,693],"filename":"devices.js","lineno":23,"columnno":4,"path":"/Users/cory.guynn/dev/meraki-service/endpoints","code":{"id":"astnode100001619","name":"getDevice","type":"FunctionExpression"},"vars":{"":null},"shortpath":"endpoints/devices.js"},"description":"<p>return a single device in a network</p>","memberof":"module:Devices","params":[{"type":{"names":["*"]},"name":"netId"},{"type":{"names":["*"]},"name":"serial"}],"returns":[{"type":{"names":["Promise"]},"description":"<p>A promise holding the device object</p>"}],"name":"getDevice","longname":"module:Devices.getDevice","kind":"function","scope":"static","___id":"T000002R000116","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".getDevice","signature":"<span class=\"signature\">(netId, serial)</span><span class=\"type-signature\"> &rarr; {Promise}</span>","ancestors":["<a href=\"module-Devices.html\">Devices</a>."]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="endpoints_devices.js.html">devices.js</a>:<a href="endpoints_devices.js.html#line12">12</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id=".getDevices">
+      <a href="#params-getDevices"><span class="type-signature">(static) </span>getDevices</a><span class="signature">(netId)</span><span class="type-signature"> &rarr; {Promise}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>list devices for a network</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getDevices">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-getDevices" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>netId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+<div class="param-desc">
+    <p>A promise holding an array of devices</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n     * list devices for a network\n     * @memberof module:Devices\n     * @param {*} netId \n     * @return { Promise } A promise holding an array of devices\n     */","meta":{"range":[232,348],"filename":"devices.js","lineno":12,"columnno":4,"path":"/Users/cory.guynn/dev/meraki-service/endpoints","code":{"id":"astnode100001595","name":"getDevices","type":"FunctionExpression"},"vars":{"":null},"shortpath":"endpoints/devices.js"},"description":"<p>list devices for a network</p>","memberof":"module:Devices","params":[{"type":{"names":["*"]},"name":"netId"}],"returns":[{"type":{"names":["Promise"]},"description":"<p>A promise holding an array of devices</p>"}],"name":"getDevices","longname":"module:Devices.getDevices","kind":"function","scope":"static","___id":"T000002R000115","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".getDevices","signature":"<span class=\"signature\">(netId)</span><span class=\"type-signature\"> &rarr; {Promise}</span>","ancestors":["<a href=\"module-Devices.html\">Devices</a>."]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="endpoints_devices.js.html">devices.js</a>:<a href="endpoints_devices.js.html#line34">34</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id=".getPerfScore">
+      <a href="#params-getPerfScore"><span class="type-signature">(static) </span>getPerfScore</a><span class="signature">(netId, serial)</span><span class="type-signature"> &rarr; {Promise}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>return performance score for a single device (MX)</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getPerfScore">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-getPerfScore" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>netId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>serial</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+<div class="param-desc">
+    <p>A promise holding the performance score</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n     * return performance score for a single device (MX)\n     * @memberof module:Devices\n     * @param {*} netId \n     * @param {*} serial \n     * @return { Promise } A promise holding the performance score\n     */","meta":{"range":[923,1076],"filename":"devices.js","lineno":34,"columnno":4,"path":"/Users/cory.guynn/dev/meraki-service/endpoints","code":{"id":"astnode100001646","name":"getPerfScore","type":"FunctionExpression"},"vars":{"":null},"shortpath":"endpoints/devices.js"},"description":"<p>return performance score for a single device (MX)</p>","memberof":"module:Devices","params":[{"type":{"names":["*"]},"name":"netId"},{"type":{"names":["*"]},"name":"serial"}],"returns":[{"type":{"names":["Promise"]},"description":"<p>A promise holding the performance score</p>"}],"name":"getPerfScore","longname":"module:Devices.getPerfScore","kind":"function","scope":"static","___id":"T000002R000117","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".getPerfScore","signature":"<span class=\"signature\">(netId, serial)</span><span class=\"type-signature\"> &rarr; {Promise}</span>","ancestors":["<a href=\"module-Devices.html\">Devices</a>."]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="endpoints_devices.js.html">devices.js</a>:<a href="endpoints_devices.js.html#line57">57</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id=".getUplinkStatus">
+      <a href="#params-getUplinkStatus"><span class="type-signature">(static) </span>getUplinkStatus</a><span class="signature">(netId, serial)</span><span class="type-signature"> &rarr; {Promise}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>return uplink status for a device</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getUplinkStatus">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-getUplinkStatus" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>netId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>serial</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+<div class="param-desc">
+    <p>A promise holding the uplink status</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n     * return uplink status for a device\n     * @memberof module:Devices\n     * @param {*} netId \n     * @param {*} serial \n     * @return { Promise } A promise holding the uplink status\n     */","meta":{"range":[1639,1790],"filename":"devices.js","lineno":57,"columnno":4,"path":"/Users/cory.guynn/dev/meraki-service/endpoints","code":{"id":"astnode100001704","name":"getUplinkStatus","type":"FunctionExpression"},"vars":{"":null},"shortpath":"endpoints/devices.js"},"description":"<p>return uplink status for a device</p>","memberof":"module:Devices","params":[{"type":{"names":["*"]},"name":"netId"},{"type":{"names":["*"]},"name":"serial"}],"returns":[{"type":{"names":["Promise"]},"description":"<p>A promise holding the uplink status</p>"}],"name":"getUplinkStatus","longname":"module:Devices.getUplinkStatus","kind":"function","scope":"static","___id":"T000002R000119","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".getUplinkStatus","signature":"<span class=\"signature\">(netId, serial)</span><span class=\"type-signature\"> &rarr; {Promise}</span>","ancestors":["<a href=\"module-Devices.html\">Devices</a>."]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="endpoints_devices.js.html">devices.js</a>:<a href="endpoints_devices.js.html#line79">79</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id=".removeDevice">
+      <a href="#params-removeDevice"><span class="type-signature">(static) </span>removeDevice</a><span class="signature">(netId, serial)</span><span class="type-signature"> &rarr; {Promise}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>remove a device from a network (no post body required)</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-removeDevice">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-removeDevice" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>netId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>serial</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n     * remove a device from a network (no post body required)\n     * @memberof module:Devices\n     * @param {*} netId \n     * @param {*} serial \n     * @return { Promise } \n     */","meta":{"range":[2276,2425],"filename":"devices.js","lineno":79,"columnno":4,"path":"/Users/cory.guynn/dev/meraki-service/endpoints","code":{"id":"astnode100001759","name":"removeDevice","type":"FunctionExpression"},"vars":{"":null},"shortpath":"endpoints/devices.js"},"description":"<p>remove a device from a network (no post body required)</p>","memberof":"module:Devices","params":[{"type":{"names":["*"]},"name":"netId"},{"type":{"names":["*"]},"name":"serial"}],"returns":[{"type":{"names":["Promise"]}}],"name":"removeDevice","longname":"module:Devices.removeDevice","kind":"function","scope":"static","___id":"T000002R000121","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".removeDevice","signature":"<span class=\"signature\">(netId, serial)</span><span class=\"type-signature\"> &rarr; {Promise}</span>","ancestors":["<a href=\"module-Devices.html\">Devices</a>."]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="endpoints_devices.js.html">devices.js</a>:<a href="endpoints_devices.js.html#line46">46</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id=".updateDevice">
+      <a href="#params-updateDevice"><span class="type-signature">(static) </span>updateDevice</a><span class="signature">(netId, serial, body)</span><span class="type-signature"> &rarr; {Promise}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>update the attributes of a single device</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-updateDevice">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-updateDevice" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>netId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>serial</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n     * update the attributes of a single device\n     * @memberof module:Devices\n     * @param {*} netId \n     * @param {*} serial \n     * @param {*} body \n     * @return { Promise }\n     */","meta":{"range":[1281,1429],"filename":"devices.js","lineno":46,"columnno":4,"path":"/Users/cory.guynn/dev/meraki-service/endpoints","code":{"id":"astnode100001675","name":"updateDevice","type":"FunctionExpression"},"vars":{"":null},"shortpath":"endpoints/devices.js"},"description":"<p>update the attributes of a single device</p>","memberof":"module:Devices","params":[{"type":{"names":["*"]},"name":"netId"},{"type":{"names":["*"]},"name":"serial"},{"type":{"names":["*"]},"name":"body"}],"returns":[{"type":{"names":["Promise"]}}],"name":"updateDevice","longname":"module:Devices.updateDevice","kind":"function","scope":"static","___id":"T000002R000118","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".updateDevice","signature":"<span class=\"signature\">(netId, serial, body)</span><span class=\"type-signature\"> &rarr; {Promise}</span>","ancestors":["<a href=\"module-Devices.html\">Devices</a>."]}
+</pre>
+-->
+</div>
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue May 22 2018 18:28:13 GMT+0200 (CEST) using the LOKE theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

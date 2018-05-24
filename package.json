@@ -4,6 +4,7 @@
   "description": "A Cisco Meraki Dashboard API service library. Uses Axios.",
   "main": "meraki-service.js",
   "scripts": {
+    "jsdoc": "jsdoc -c jsdoc.config.json meraki-service.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -16,5 +17,11 @@
   "dependencies": {
     "axios": "^0.18.0",
     "json-bigint": "^0.2.3"
+  },
+  "devDependencies": {
+    "docdash": "^0.4.0",
+    "lodash": "^4.17.10",
+    "loke-jsdoc-theme": "^2.1.0",
+    "node-vcr": "^1.4.4"
   }
 }
