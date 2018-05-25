@@ -13,7 +13,7 @@ const serial = 'Q2HP-6Z82-NGDM';
 */
 
 // PII ENV
-const API_KEY = 'be647eed3046542a895ea9ad07b7f7cef4c002de';//'2f301bccd61b6c642d250cd3f76e5eb66ebd170f'; // Sandbox Demos
+const API_KEY = '2f301bccd61b6c642d250cd3f76e5eb66ebd170f'; // Sandbox Demos
 const orgId = '773901';
 const netId = 'N_660903245316632307';
 const deviceMac = '88:15:44:60:1c:1a';
