@@ -58,7 +58,7 @@ const clients = {
         if (!client) {
             return Promise.reject(new Error('The client MAC or client ID is required'))
         }
-        return this.meraki.get('/networks/' + netId + '/clients/' + client).then((res) => res.data);
+        return this.meraki.get('/networks/' + netId + '/clients/' + client + '/usageHistory').then((res) => res.data);
     },
     /**
      * Returnpolicy for a Client in a Network
