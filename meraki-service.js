@@ -102,7 +102,7 @@ class merakiService {
     this.meraki.interceptors.request.use(
       config => {
         //console.log('config', config);
-        console.log('config.body', config.body);
+        //console.log('config.body', config.body);
         //console.log('config headers', config.headers)
         //console.log('config request', config.request)
         config.validateStatus = function (status) {
@@ -119,18 +119,18 @@ class merakiService {
       res => {
         const data = this._data;
         const headers = this._headers;
-        console.log('Meraki Service res:', res.request.path, res.status);
+        //console.log('Meraki Service res:', res.request.path, res.status);
         //console.log('Meraki Service response res.request', res.request);
 
         if ((res.status == '308' || '307' || '302' || '301') && res.headers.location) {
-          console.log('REDIRECT')
+          //console.log('REDIRECT')
           var options = {
             url: res.headers.location,
             data: data,
             method: res.request.method,
             headers: headers,
           };
-          console.log('options', options);
+          //console.log('options', options);
           return this.meraki(options).then((res) => {
             //console.log('redirect res', res);
             return res
