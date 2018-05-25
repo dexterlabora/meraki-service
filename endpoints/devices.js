@@ -4,7 +4,7 @@
  */
 const devices = {
     /**
-     * list devices for a network
+     * Return devices for a network
      * @memberof module:Devices
      * @param {*} netId 
      * @return { Promise } A promise holding an array of devices
@@ -14,7 +14,7 @@ const devices = {
     },
 
     /**
-     * return a single device in a network
+     * Return a single device in a network
      * @memberof module:Devices
      * @param {*} netId 
      * @param {*} serial 
@@ -25,7 +25,7 @@ const devices = {
     },
 
     /**
-     * return performance score for a single device (MX)
+     * Return performance score for a single device (MX)
      * @memberof module:Devices
      * @param {*} netId 
      * @param {*} serial 
@@ -36,7 +36,7 @@ const devices = {
     },
 
     /**
-     * update the attributes of a single device
+     * Update the attributes of a single device
      * @memberof module:Devices
      * @param {*} netId 
      * @param {*} serial 
@@ -48,7 +48,7 @@ const devices = {
     },
 
     /**
-     * return uplink status for a device
+     * Return uplink status for a device
      * @memberof module:Devices
      * @param {*} netId 
      * @param {*} serial 
@@ -59,7 +59,7 @@ const devices = {
     },
 
     /**
-     * claim a device
+     * Claim a device
      * @memberof module:Devices
      * @param {*} netId 
      * @param {*} body 
@@ -70,7 +70,7 @@ const devices = {
     },
 
     /**
-     * remove a device from a network (no post body required)
+     * Remove a device from a network (no post body required)
      * @memberof module:Devices
      * @param {*} netId 
      * @param {*} serial 

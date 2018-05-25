@@ -1,24 +1,44 @@
+/**
+ * Config Templates
+ * @module Config_Templates
+ */
 const configTemplates = {
-    // *********
-    // Config Templates
-    // *********
 
-    // GET Config templates for an organization
+    /**
+     * Return the config templates for an organization
+     * @memberof module:Config_Templates
+     * @param {*} orgId 
+     */
     getConfigTemplates(orgId) {
         return this.meraki.get('/organizations/' + orgId + '/configTemplates').then((res) => res.data);
     },
 
-    // DELETE a Configuration Template
+    /**
+     * Delete a configuration template
+     * @memberof module:Config_Templates
+     * @param {*} orgId 
+     * @param {*} templateId 
+     */
     removeConfigTemplate(orgId, templateId) {
         return this.meraki.delete('/organizations/' + orgId + '/configTemplates/' + templateId).then((res) => res.data);
     },
 
-    // POST bind Network to Template
+    /**
+     * Bind network to template
+     * @memberof module:Config_Templates
+     * @param {*} netId 
+     * @param {*} data 
+     */
     bindTemplate(netId, data) {
         return this.meraki.post('/networks/' + netId + '/bind', data).then((res) => res.data);
     },
 
-    // POST unbind Network from Template
+    /**
+     * Unbind network from template
+     * @memberof module:Config_Templates
+     * @param {*} netId 
+     * @param {*} data 
+     */
     unbindTemplate(netId, data) {
         return this.meraki.post('/networks/' + netId + '/unbind', data).then((res) => res.data);
     }

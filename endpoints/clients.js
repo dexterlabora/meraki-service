@@ -1,11 +1,10 @@
 
 
-
+/**
+ * Clients
+ * @module Clients
+ */
 const clients = {
-    /**
-     * Clients
-     * @module Clients
-     */
 
     /**
      * list the cliets for a Meraki device serial for a given timespan in seconds

@@ -1,15 +1,11 @@
+/**
+ * Custom Scripts
+ * 
+ * These scripts are helfpul for iterating through API endpoints, chaining data or returing enhanced results.
+ * 
+ * @module Custom
+ */
 const custom = {
-    // **************
-    // Custom Scripts
-    // **************
-
-    /*
-    These scripts are helfpul for iterating through API endpoints, chaining data or returing enhanced results.
-    */
-    /**
-     * Custom Scripts
-     * @module Custom
-     */
 
     /**
      * Get the network ID for a Meraki Device using its MAC address
@@ -71,7 +67,7 @@ const custom = {
      * @param {number=} [timespan=86400] - Timespan to search for clients in seconds
      * @param {string=} model - Meraki device model `MR`, `MS`, `MX`
      */
-    async getClientsForDevices(devices, timespan = 86400, model ) {
+    async getClientsForDevices(devices, timespan = 86400, model) {
         let clients = [];
         for (let d of devices) {
             if (model) {

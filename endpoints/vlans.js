@@ -1,29 +1,55 @@
+/**
+ * VLANs
+ * @module VLANs
+ */
 const vlans = {
-    // **************
-  // VLANs
-  // **************
 
-  // GET List the VLANs for this network
+
+  /**
+   * Return the VLANs for this network
+   * @memberof module:VLANs
+   * @param {*} netId 
+   */
   getVlans(netId) {
     return this.meraki.get('/networks/' + netId + '/vlans').then((res) => res.data);
   },
 
-  // GET Return a VLAN
+  /**
+   * Return a VLAN
+   * @memberof module:VLANs
+   * @param {*} netId 
+   * @param {*} vlanId 
+   */
   getVlan(netId, vlanId) {
     return this.meraki.get('/networks/' + netId + '/vlans/' + vlanId).then((res) => res.data);
   },
 
-  // PUT Update a VLAN
+  /**
+   * Update a VLAN
+   * @memberof module:VLANs
+   * @param {*} netId 
+   * @param {*} vlanId 
+   * @param {*} body 
+   */
   updateVlan(netId, vlanId, body) {
     return this.meraki.put('/networks/' + netId + '/vlans/' + vlanId, body).then((res) => res.data);
   },
 
-  // POST Add a VLAN
+  /**
+   * Add a VLAN
+   * @memberof module:VLANs
+   * @param {*} netId 
+   * @param {*} body 
+   */
   addVlan(netId, body) {
     return this.meraki.get('/networks/' + netId + '/vlans', body).then((res) => res.data);
   },
 
-  // DELETE Delete a VLAN
+  /**
+   * Delete a VLAN
+   * @memberof module:VLANs
+   * @param {*} netId 
+   */
   deleteVlan(netId) {
     return this.meraki.delete('/networks/' + netId + '/vlans/' + vlanId).then((res) => res.data);
   }

@@ -1,29 +1,55 @@
+/**
+ * Static Routes
+ * @module Static_Routes
+ */
 const staticRoutes = {
-    // **************
-    // Static Routes
-    // **************
 
-    // GET List the static routes for this network
+    /**
+     * Return the static routes for this network
+     * @memberof module:Static_Routes
+     * @param {*} netId 
+     */
     getStaticRoutes(netId) {
         return this.meraki.get('/networks/' + netId + '/staticRoutes').then((res) => res.data);
     },
 
-    // GET Return a static route
+    /**
+     * Return a static route
+     * @memberof module:Static_Routes
+     * @param {*} netId 
+     * @param {*} srId 
+     */
     getStaticRoute(netId, srId) {
         return this.meraki.get('/networks/' + netId + '/staticRoutes/' + srId).then((res) => res.data);
     },
 
-    // PUT Update SSID
+    /**
+     * Update SSID
+     * @memberof module:Static_Routes
+     * @param {*} netId 
+     * @param {*} srId 
+     * @param {*} data 
+     */
     updateStaticRoute(netId, srId, data) {
         return this.meraki.put('/networks/' + netId + '/staticRoutes/' + srId, data).then((res) => res.data);
     },
 
-    // POST Add a static route
+    /**
+     * Add a static route
+     * @memberof module:Static_Routes
+     * @param {*} netId 
+     * @param {*} body 
+     */
     addStaticRoute(netId, body) {
         return this.meraki.post('/networks/' + netId + '/staticRoutes', body).then((res) => res.data);
     },
 
-    // DELETE Delete a static route
+    /**
+     * Delete a static route
+     * @memberof module:Static_Routes
+     * @param {*} netId 
+     * @param {*} srId 
+     */
     deleteStaticRoute(netId, srId) {
         return this.meraki.delete('/networks/' + netId + '/staticRoutes/' + srId).then((res) => res.data);
     }

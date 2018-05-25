@@ -1,15 +1,6 @@
 
 /**
-  Meraki Dashboard API endpoint service
-A collection of functions to interact with the Meraki API. 
 
--- For use with NodeJS
-
-Features: 
-* Collection of common Dashboard API calls
-* Handles URL redirects
-* Handles Meraki error messages
-* Custom scripts for common API traversals
 
 ---
 
@@ -58,7 +49,18 @@ function _handleError(e) {
   return e;
 }
 /**
- * Meraki Service
+ * # Meraki Service for the Cisco Meraki Dashboard API
+ * 
+ * A collection of functions and helpers to interact with the API. 
+
+ * -- For use with NodeJS or frontend JavaScript applications.
+
+ * Features: 
+ * Collection of common Dashboard API calls
+ * Handles URL redirects
+ * Handles Meraki error messages
+ * Custom scripts for common API traversals
+ * 
  * @class
  * @module Meraki
  */
@@ -106,7 +108,7 @@ class merakiService {
         config.validateStatus = function (status) {
           return status == '308' || '307' || '302' || '301'; // do not throw error for redirects
         }
-        
+
         this._data = config.body; // cached request to handle redirects
         this._headers = config.headers; // cached request to handle redirects
         return config;
@@ -117,11 +119,11 @@ class merakiService {
       res => {
         const data = this._data;
         const headers = this._headers;
-         console.log('Meraki Service res:', res.request.path, res.status);
-         //console.log('Meraki Service response res.request', res.request);
+        console.log('Meraki Service res:', res.request.path, res.status);
+        //console.log('Meraki Service response res.request', res.request);
 
         if ((res.status == '308' || '307' || '302' || '301') && res.headers.location) {
-           console.log('REDIRECT')
+          console.log('REDIRECT')
           var options = {
             url: res.headers.location,
             data: data,
@@ -147,7 +149,7 @@ class merakiService {
 
   /**
    * Getters & Setters for Global API Options
-   * @module Settings
+   * @module Meraki/Settings
    */
 
   /* disabled. is this a security concern?
@@ -158,7 +160,7 @@ class merakiService {
   /**
   * set API key
   * @name set:apiKey
-  * @memberof module:Settings
+  * @memberof module:Meraki/Settings
   * @param {string} apiKey
   * @example <caption>Example Assignment</caption>
   const NEW_KEY = '2f301bccd61b6c642d250cd3f76e5eb66ebd170f';
@@ -179,7 +181,7 @@ class merakiService {
   /**
    * get current API base URL
    * @name get:baseUrl
-   * @memberof module:Settings
+   * @memberof module:Meraki/Settings
    * @return {string} - Meraki API FQDN `https://api.meraki.com/api/v0`
    * @example <caption>Example Request</caption>
     const meraki = new Meraki(API_KEY);
@@ -196,7 +198,7 @@ class merakiService {
   /**
    * set API base URL
    * @name set:baseUrl
-   * @memberof module:Settings
+   * @memberof module:Meraki/Settings
    * @param {string} baseUrl - Meraki API FQDN `https://api.meraki.com/api/v0` or `https://myProxyServer/api`
    * @example <caption>Example Assignment</caption>
    * 

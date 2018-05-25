@@ -1,10 +1,14 @@
 
+/**
+ * Networks
+ * @module Networks
+ */
 const networks = {
-    // ****************
-    // Networks
-    // ****************
 
-    // GET Networks for an organization
+    /**
+     * Return networks for an organization
+     * @param {*} orgId 
+     */
     getNetworks(orgId) {
         if (!orgId) {
             return Promise.reject(new Error('The orgId is required'))
@@ -12,7 +16,11 @@ const networks = {
         return this.meraki.get('/organizations/' + orgId + '/networks').then((res) => res.data);
     },
 
-    // GET Network 
+    /**
+     * Return a network
+     * @memberof module:Networks
+     * @param {*} netId 
+     */
     getNetwork(netId) {
         if (!netId) {
             return Promise.reject(new Error('The netId is required'))
@@ -20,7 +28,12 @@ const networks = {
         return this.meraki.get('/networks/' + netId).then((res) => res.data);
     },
 
-    // PUT Network 
+    /**
+     * Update a network
+     * @memberof module:Networks
+     * @param {*} netId 
+     * @param {*} data 
+     */
     updateNetwork(netId, data) {
         if (!netId) {
             return Promise.reject(new Error('The netId is required'))
@@ -31,7 +44,12 @@ const networks = {
         return this.meraki.put('/networks/' + netId, data).then((res) => res.data);
     },
 
-    // POST Network in an organization
+    /**
+     * Create a network
+     * @memberof module:Networks
+     * @param {*} orgId 
+     * @param {*} data 
+     */
     createNetwork(orgId, data) {
         if (!orgId) {
             return Promise.reject(new Error('The orgId is required'))
@@ -42,7 +60,11 @@ const networks = {
         return this.meraki.post('/organizations/' + orgId + '/networks', data).then((res) => res.data);
     },
 
-    // DELETE Network
+    /**
+     * Delete a network
+     * @memberof module:Networks
+     * @param {*} netId 
+     */
     deleteNetwork(netId) {
         if (!netId) {
             return Promise.reject(new Error('The netId is required'))
@@ -50,7 +72,12 @@ const networks = {
         return this.meraki.delete('/networks/' + netId).then((res) => res.data);
     },
 
-    // GET Traffic for a network
+    /**
+     * Return traffic for a network
+     * @memberof module:Networks
+     * @param {*} netId 
+     * @param {*} timespan 
+     */
     getTraffic(netId, timespan) {
         if (!netId) {
             return Promise.reject(new Error('The netId is required'))
@@ -61,7 +88,11 @@ const networks = {
         return this.meraki.get('/networks/' + netId + '/traffic?timespan=' + timespan).then((res) => res.data);
     },
 
-    // GET access policies for a network of switches
+    /**
+     * Return access policies for a network of switches
+     * @memberof module:Networks
+     * @param {*} netId 
+     */
     getAccessPolicies(netId) {
         if (!netId) {
             return Promise.reject(new Error('The netId is required'))
@@ -69,7 +100,11 @@ const networks = {
         return this.meraki.get('/networks/' + netId + '/accessPolicies').then((res) => res.data);
     },
 
-    // GET return the bluetooth settings for a network (MR)
+    /**
+     * Return the bluetooth settings for a network (MR)
+     * @memberof module:Networks
+     * @param {*} netId 
+     */
     getBluetoothSettings(netId) {
         if (!netId) {
             return Promise.reject(new Error('The netId is required'))
@@ -77,7 +112,11 @@ const networks = {
         return this.meraki.get('/networks/' + netId + '/bluetoothSettings').then((res) => res.data);
     },
 
-    // PUT update the bluetooth settings for a network (MR)
+    /**
+     * Update the bluetooth settings for a network (MR)
+     * @memberof module:Networks
+     * @param {*} netId 
+     */
     updateBluetoothSettings(netId) {
         if (!netId) {
             return Promise.reject(new Error('The netId is required'))
@@ -85,7 +124,12 @@ const networks = {
         return this.meraki.put('/networks/' + netId + '/bluetoothSettings').then((res) => res.data);
     },
 
-    // GET List Air Marshal scan results from a network
+    /**
+     * Return Air Marshal scan results from a network
+     * @memberof module:Networks
+     * @param {*} netId 
+     * @param {*} timespan 
+     */
     getAirmarshal(netId, timespan) {
         if (!netId) {
             return Promise.reject(new Error('The netId is required'))
