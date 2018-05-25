@@ -14,12 +14,11 @@ const serial = 'Q2HP-6Z82-NGDM';
 
 // PII ENV
 const API_KEY = '2f301bccd61b6c642d250cd3f76e5eb66ebd170f'; // Sandbox Demos
-const API_KEY2 = '5903a78f49af79332369201c02b31891dff83501'; // GDPR
 const orgId = '773901';
 const netId = 'N_660903245316632307';
 const deviceMac = '88:15:44:60:1c:1a';
 const serial = 'Q2HP-ZQDY-79F9';
-const clientMac = 'e0:cb:bc:0a:09:96';
+const clientMac = '0c:8d:db:95:8b:83';
 const piiId = '660903245316620289'
 
 
@@ -37,13 +36,17 @@ console.log('API Base URL: ', url);
 
 
 
+meraki.getClientUsageHistory(netId, clientMac).then(res => {
+    console.log('getClietnUsageHistory', res);
+})
+
 /**
  * PII Requests
  */
 
- /*
+/*
 meraki.getPiiRequests(orgId).then((res) => {
-    console.log('Pii Requests', res.data);
+   console.log('Pii Requests', res.data);
 });
 */
 /*
@@ -124,7 +127,7 @@ const proxyOptions = {
     headers: {
         'X-Cisco-Meraki-API-Key': API_KEY2,
         'Content-Type': 'application/json'
-      } 
+    }
 }
 meraki.proxy(proxyOptions).then(res => {
     console.log('Organizations proxied with custom headers: ', res);
