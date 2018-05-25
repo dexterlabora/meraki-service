@@ -172,7 +172,8 @@ const custom = {
             try {
                 let c = await this.getClients(d.serial, timespan).then(res => res);
                 c.device = d;
-                clients.push(c);
+                //clients.push(c);
+                clients = [...clients, ...c];
             } catch (e) { continue }
         }
         return clients;
@@ -194,14 +195,15 @@ const custom = {
      */
     async getClientPolicyForClients(netId, clients, timespan = 86400) {
         let allClients = [];
+        console.log('getClientPolicyForClients clients', clients)
         for (let c of clients) {
             try {
                 const policy = await this.getClientPolicy(netId, c.mac, timespan).then(res => res);
-                //console.log('policy', policy);
+                console.log('policy', policy);
                 if (!policy.type) { continue }
                 //console.log(" - Policy type " + policy.type);
                 if (policy.groupPolicyId) {
-                    // console.log(" - ID: " + policy.groupPolicyId);
+                    console.log(" - ID: " + policy.groupPolicyId);
                 }
                 c.policy = policy;
                 allClients.push(c);

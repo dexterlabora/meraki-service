@@ -2,17 +2,18 @@
 const Meraki = require('.././meraki-service');
 
 // Environment Variables
-/*
-const API_KEY = process.env.API_KEY || 'be647eed3046542a895ea9ad07b7f7cef4c002de'; //'2f301bccd61b6c642d250cd3f76e5eb66ebd170f' // Sandbox API Key
+
+const API_KEY = process.env.API_KEY || '2f301bccd61b6c642d250cd3f76e5eb66ebd170f' // Sandbox API Key
 const API_URL = "https://api.meraki.com/api/v0";//'http://localhost:8888' //"https://api.meraki.com/api/v0"; //
 
 const orgId = '306267';
-const netId = 'L_646829496481095933';
+const netId = 'L_643451796760560141';
 const deviceMac = 'e0:55:3d:10:42:a6';
 const serial = 'Q2HP-6Z82-NGDM';
-*/
+
 
 // PII ENV
+/*
 const API_KEY = 'be647eed3046542a895ea9ad07b7f7cef4c002de'; // Sandbox Demos
 const orgId = '773901';
 const netId = 'N_660903245316632307';
@@ -20,7 +21,7 @@ const deviceMac = '88:15:44:60:1c:1a';
 const serial = 'Q2HP-ZQDY-79F9';
 const clientMac = '0c:8d:db:95:8b:83';
 const piiId = '660903245316620289'
-
+*/
 
 // Initialize Meraki
 //const meraki = new Meraki(API_KEY,API_URL);
@@ -200,11 +201,11 @@ meraki.getClientsForOrg(orgId, 864000).then(res => {
 });
 */
 
-
+/*
 meraki.getClientsForNetwork('L_643451796760560141', 86400, 'MR').then((res) => {
     console.log('Clients: ', res);
 });
-
+*/
 
 
 
@@ -234,11 +235,75 @@ meraki.getNetworkIdForDeviceMac(orgId, deviceMac).then((res) => {
 
 /*
 const clients = [
-    { mac: "d0:2b:20:91:90:67"},
-    { mac: "74:da:38:56:0a:80"},
-    { mac: '60:e3:ac:f7:48:08'}
+    { mac: "d0:2b:20:91:90:67" },
+    { mac: "74:da:38:56:0a:80" },
+    { mac: '60:e3:ac:f7:48:08' }
 ]
-meraki.getClientPolicyForClients(clients, netId, 86400).then((res) => {
-    console.log('Clients: ',res);
+meraki.getClientPolicyForClients(netId, clients, 86400).then((res) => {
+    console.log('Clients: ', res);
 });
 */
+
+
+
+function fetchClientsForNetwork() {
+    if (!netId) {
+        return;
+    }
+    let clients = [];
+    // Get Clients
+    meraki
+        .getClientsForNetwork(netId, '86400', 'MR')
+        .then(res => {
+            clients = res;
+            console.log("getClientsForNetwork res", res);
+            //return (this.clients = this.removeDuplicates(this.clients, "id"));
+        })
+        // Get Policy for Each Client
+        .then(() => {
+            if (!clients) {
+                return;
+            }
+            meraki
+                .getClientPolicyForClients(netId, clients, '86400')
+                .then(res => {
+                    //this.clients = res;
+                    clientsAndPolicy = res;
+                    console.log('getClientPolicyForClients clientsAndPolicy', clientsAndPolicy);
+                    clientsAndPolicy = addPolicyNames(
+                        clients,
+                        policies
+                    );
+                    console.log('getClientPolicyForClients clients', clients);
+                    console.log('clientsAndPolicy', clientsAndPolicy);
+                });
+        });
+}
+
+function addPolicyNames(clients, policies) {
+    console.log("addPolicyNames");
+    let newClients = [];
+    clients.forEach(c => {
+        if (!c.policy) {
+            return;
+        }
+        policies.forEach(p => {
+            if (c.policy.groupPolicyId) {
+                if (p.groupPolicyId == c.policy.groupPolicyId) {
+                    c.policy.name = p.name;
+                }
+            }
+        });
+        newClients.push(c);
+    });
+    return newClients;
+}
+
+let policies;
+meraki.getPolicies(netId).then(res => {
+    console.log('policies res', res)
+    policies = res;
+    fetchClientsForNetwork();
+});
+
+//fetchClientsForNetwork();
