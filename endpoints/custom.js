@@ -25,11 +25,14 @@ const custom = {
             return devices[0];
 
         });
+        return clients;
+        /*
         let res = {
             status: 200,
             data: device.networkId
         };
         return res;
+        */
     },
 
     /**
@@ -53,11 +56,14 @@ const custom = {
                 continue;
             }
         }
+        return clients;
+        /*
         let res = {
             status: 200,
             data: clients
         };
         return res;
+        */
     },
 
     /**
@@ -68,6 +74,15 @@ const custom = {
      * @param {string=} model - Meraki device model `MR`, `MS`, `MX`
      */
     async getClientsForDevices(devices, timespan = 86400, model) {
+        if (!devices) {
+            return Promise.reject(new Error('The devices array is required'))
+        }
+        if (!timespan) {
+            return Promise.reject(new Error('The timespan is required'))
+        }
+        if (!model) {
+            return Promise.reject(new Error('The model type is required: MX, MR, MS'))
+        }
         let clients = [];
         for (let d of devices) {
             if (model) {
@@ -82,11 +97,14 @@ const custom = {
                 clients.push(c);
             } catch (e) { continue }
         }
+        return clients;
+        /*
         let res = {
             status: 200,
             data: clients
         };
         return res;
+        */
     },
 
     /**
@@ -97,6 +115,15 @@ const custom = {
      * @param {string=} model - Meraki device model `MR`, `MS`, `MX`
      */
     async getClientsForNetworks(networks, timespan = 86400, model) {
+        if (!devices) {
+            return Promise.reject(new Error('The devices array is required'))
+        }
+        if (!timespan) {
+            return Promise.reject(new Error('The timespan is required'))
+        }
+        if (!model) {
+            return Promise.reject(new Error('The model type is required: MX, MR, MS'))
+        }
         let clients = [];
         for (let n of networks) {
             if (model) {
@@ -108,11 +135,14 @@ const custom = {
                 clients.push(c);
             } catch (e) { continue }
         }
+        return clients;
+        /*
         let res = {
             status: 200,
             data: clients
         };
         return res;
+        */
     },
 
     /**
@@ -124,23 +154,26 @@ const custom = {
      */
     async getClientsForNetwork(netId, timespan, model) {
         // where model = "MR" MV MX MS MC or model name "MR33"
-        let devices = [] = await this.getDevices(netId).then((res) => res.data);
+        let devices = [] = await this.getDevices(netId).then((res) => res);
         let clients = [];
         for (let d of devices) {
             if (model) {
                 if (!d.model.includes(model)) { continue }
             }
             try {
-                let c = await this.getClients(d.serial, timespan).then((res) => { return res.data });
+                let c = await this.getClients(d.serial, timespan).then((res) => { return res });
                 c.device = d;
                 clients.push(c);
             } catch (e) { continue }
         }
+        return clients;
+        /*
         let res = {
             status: 200,
             data: clients
         };
         return res;
+        */
     },
 
     /**
@@ -168,11 +201,14 @@ const custom = {
                 continue;
             }
         }
+        return allClients;
+        /*
         let res = {
             status: 200,
             data: allClients
         };
         return res;
+        */
     }
 }
 
