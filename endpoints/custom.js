@@ -15,9 +15,9 @@ const custom = {
      * @param {string} mac - Meraki device MAC address
      */
     async getNetworkIdForDeviceMac(orgId, mac) {
-        const device = await this.getOrgDevices(orgId).then((res) => {
+        const device = await this.getOrgDevices(orgId).then(res => {
 
-            const devices = [] = res.data.filter(function (obj) {
+            const devices = [] = res.filter(function (obj) {
                 return obj.mac == mac;
             });
             console.log('filtered devices ', devices);
@@ -42,12 +42,12 @@ const custom = {
      * @param {number=} [timespan=86400] - Timespan to search for clients in seconds
      */
     async getClientsForOrg(orgId, timespan = 86400) {
-        let devices = [] = await this.getOrgDevices(orgId).then((res) => { return res.data }); // doesn't return model type
+        let devices = [] = await this.getOrgDevices(orgId).then(res => res); // doesn't return model type
         console.log('devices in org', devices);
         let clients = [];
         for (let d of devices) {
             try {
-                let c = await this.getClients(d.serial, timespan).then((res) => { return res.data });
+                let c = await this.getClients(d.serial, timespan).then(res => res);
                 console.log('Clients for device', c);
                 if (c.errors) { continue }
                 c.device = d;
@@ -91,7 +91,7 @@ const custom = {
                 if (!d.model.includes("MR") && !d.model.includes("MX") && !d.model.includes("MS")) { continue }
             }
             try {
-                let c = await this.getClients(d.serial, timespan).then((res) => res.data);
+                let c = await this.getClients(d.serial, timespan).then(res => res);
                 if (c.errors) { continue }
                 c.device = d;
                 clients.push(c);
@@ -130,7 +130,7 @@ const custom = {
                 if (!d.model.includes(model)) { continue }
             }
             try {
-                let c = await this.getClientsForNetwork(n.id, timespan, model).then((res) => res.data);
+                let c = await this.getClientsForNetwork(n.id, timespan, model).then(res => res);
                 c.network = n;
                 clients.push(c);
             } catch (e) { continue }
@@ -153,6 +153,15 @@ const custom = {
      * @param {string=} model - Meraki device model `MR`, `MS`, `MX`
      */
     async getClientsForNetwork(netId, timespan, model) {
+        if (!netId) {
+            return Promise.reject(new Error('The netId is required'))
+        }
+        if (!timespan) {
+            return Promise.reject(new Error('The timespan is required'))
+        }
+        if (!model) {
+            return Promise.reject(new Error('The model type is required: MX, MR, MS'))
+        }
         // where model = "MR" MV MX MS MC or model name "MR33"
         let devices = [] = await this.getDevices(netId).then((res) => res);
         let clients = [];
@@ -161,7 +170,7 @@ const custom = {
                 if (!d.model.includes(model)) { continue }
             }
             try {
-                let c = await this.getClients(d.serial, timespan).then((res) => { return res });
+                let c = await this.getClients(d.serial, timespan).then(res => res);
                 c.device = d;
                 clients.push(c);
             } catch (e) { continue }
@@ -179,15 +188,15 @@ const custom = {
     /**
      * gets the client policy for an array of clients in a network.
      * @memberof module:Custom
-     * @param {Array} clients Array of clients with MAC property `[{mac: 'aa:bb:cc:dd:ee:ff}, {mac: 'bb:bb:cc:dd:ee:ff}]`
      * @param {string} networkId - ID of network `L_123456789`
+     * @param {Array} clients - Array of clients with MAC property `[{mac: 'aa:bb:cc:dd:ee:ff}, {mac: 'bb:bb:cc:dd:ee:ff}]`
      * @param {number=} [timespan=86400] - Timespan to search for clients
      */
-    async getClientPolicyForClients(clients, netId, timespan = 86400) {
+    async getClientPolicyForClients(netId, clients, timespan = 86400) {
         let allClients = [];
         for (let c of clients) {
             try {
-                const policy = await this.getClientPolicy(netId, c.mac, timespan).then((res) => { return res.data });
+                const policy = await this.getClientPolicy(netId, c.mac, timespan).then(res => res);
                 //console.log('policy', policy);
                 if (!policy.type) { continue }
                 //console.log(" - Policy type " + policy.type);
