@@ -45,6 +45,23 @@ const clients = {
         }
         return this.meraki.get('/devices/' + serial + '/clients?timespan=' + timespan).then((res) => res.data);
     },
+
+    /**
+     * Return a client
+     * @memberof module:Clients
+     * @param {*} netId 
+     * @param {*} client 
+     */
+    getClient(netId, client) {
+        if (!netId) {
+            return Promise.reject(new Error('The netId is required'))
+        }
+        if (!client) {
+            return Promise.reject(new Error('The client MAC or client ID is required'))
+        }
+        return this.meraki.get('/networks/' + netId + '/clients/' + client).then((res) => res.data);
+    },
+
     /**
      * Return client usage history
      * @memberof module:Clients
@@ -60,6 +77,7 @@ const clients = {
         }
         return this.meraki.get('/networks/' + netId + '/clients/' + client + '/usageHistory').then((res) => res.data);
     },
+
     /**
      * Returnpolicy for a Client in a Network
      * @memberof module:Clients
