@@ -7,6 +7,10 @@ A collection of methods to interact with the [Meraki Dashboard API](https://crea
 
 This is a convenient API wrapper built with [Axios](https://www.npmjs.com/package/axios). The service saves time by handling common tasks when working with the API.
 
+-- In Active Development -- 
+This service could have several breaking changes as it is being developed. You can clone this into your application if you want stability for now.
+
+
 ## Features: 
 * Collection of the most common Dashboard API calls
 * Handles URL redirects

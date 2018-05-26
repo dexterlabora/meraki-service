@@ -50,8 +50,8 @@ const custom = {
                 let c = await this.getClients(d.serial, timespan).then(res => res);
                 console.log('Clients for device', c);
                 if (c.errors) { continue }
-                c.device = d;
-                clients.push(c);
+                c.map(client => client.device = d);
+                clients = [...clients, ...c];
             } catch (e) {
                 continue;
             }
@@ -171,8 +171,9 @@ const custom = {
             }
             try {
                 let c = await this.getClients(d.serial, timespan).then(res => res);
-                c.device = d;
-                //clients.push(c);
+                c.map(client => client.device = d);
+                //console.log('getClientsForNetwork d ', d);
+                //console.log('getClientsForNetwork c ', c);
                 clients = [...clients, ...c];
             } catch (e) { continue }
         }

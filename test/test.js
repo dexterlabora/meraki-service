@@ -245,7 +245,7 @@ meraki.getClientPolicyForClients(netId, clients, 86400).then((res) => {
 */
 
 
-
+/*
 function fetchClientsForNetwork() {
     if (!netId) {
         return;
@@ -307,3 +307,22 @@ meraki.getPolicies(netId).then(res => {
 });
 
 //fetchClientsForNetwork();
+*/
+
+/*
+meraki
+    .getClientsForNetwork(netId, '86400', 'MR')
+    .then(res => {
+        clients = res;
+        console.log("getClientsForNetwork res", res);
+        //return (this.clients = this.removeDuplicates(this.clients, "id"));
+    });
+    */
+
+meraki
+    .getClientsForOrg(orgId, '86400', 'MR')
+    .then(res => {
+        clients = res;
+        console.log("getClientsForNetwork res", res);
+        //return (this.clients = this.removeDuplicates(this.clients, "id"));
+    });
