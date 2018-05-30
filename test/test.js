@@ -6,7 +6,7 @@ const Meraki = require('.././meraki-service');
 const API_KEY = process.env.API_KEY || '2f301bccd61b6c642d250cd3f76e5eb66ebd170f' // Sandbox API Key
 const API_URL = "https://api.meraki.com/api/v0";//'http://localhost:8888' //"https://api.meraki.com/api/v0"; //
 
-const orgId = '306267';
+const orgId = '549236';
 const netId = 'L_643451796760560141';
 const deviceMac = 'e0:55:3d:10:42:a6';
 const serial = 'Q2HP-6Z82-NGDM';
@@ -227,11 +227,11 @@ meraki.updateClientPolicy(netId, clientMac, timespan, data)
         });
 */
 
-/*
+
 meraki.getNetworkIdForDeviceMac(orgId, deviceMac).then((res) => {
-    console.log('Network for device: ',deviceMac, res);
+    console.log('Network for device: ', deviceMac, res);
 });
-*/
+
 
 /*
 const clients = [
@@ -318,7 +318,7 @@ meraki
         //return (this.clients = this.removeDuplicates(this.clients, "id"));
     });
     */
-
+/*
 meraki
     .getClientsForOrg(orgId, '86400', 'MR')
     .then(res => {
@@ -326,3 +326,4 @@ meraki
         console.log("getClientsForNetwork res", res);
         //return (this.clients = this.removeDuplicates(this.clients, "id"));
     });
+    */

@@ -16,16 +16,18 @@ const custom = {
      */
     async getNetworkIdForDeviceMac(orgId, mac) {
         const device = await this.getOrgDevices(orgId).then(res => {
-
-            const devices = [] = res.filter(function (obj) {
-                return obj.mac == mac;
-            });
-            console.log('filtered devices ', devices);
-            console.log('filtered network ID ', devices[0].networkId);
-            return devices[0];
-
+            try {
+                const devices = [] = res.filter(obj => {
+                    return obj.mac == mac;
+                });
+                console.log('filtered devices ', devices);
+                console.log('filtered network ID ', devices[0].networkId);
+                return devices[0];
+            } catch (error) {
+                console.log('meraki-service: getNetworkIdForDeviceMac error', error);
+            }
         });
-        return clients;
+        return device.networkId;
         /*
         let res = {
             status: 200,
