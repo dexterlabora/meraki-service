@@ -29,7 +29,7 @@ This service could have several breaking changes as it is being developed. You c
 
 ## Install
 
-```
+```bash
 npm install <this-repository>
 ```
 
@@ -37,7 +37,7 @@ npm install <this-repository>
 
 or
 
-```
+```bash
 npm install meraki-service
 ```
 
@@ -47,7 +47,7 @@ npm install meraki-service
 
 The `meraki-service.js` file contains a JavaScript class with all of the service methods. Explore this file to understand what each of the method names are and their required parameters. Use the Meraki Dashboard API docs to understand the required body parameters, etc.
 
-```
+```js
 // index.js
 const Meraki = require('meraki-service');
 const meraki = new Meraki('YourAPIKey','https://api.meraki.com/api/v0');
@@ -62,7 +62,7 @@ $ Organizations:  [ { id: 549236, name: 'Meraki DevNet Sandbox' } ]
 
 ## As an Express API proxy
 
-```
+```js
 ... <node express> ...
 app.use('/api', jsonParser, function (req, res){
     console.log('API request ', req.method, req.url, req.method != 'GET' ? req.body:'');
@@ -83,7 +83,7 @@ app.use('/api', jsonParser, function (req, res){
 });
 ```
 
-```
+```bash
 $ node index.js
 Server Running on:      http://localhost:5000
 Meraki API Proxy:       http://localhost:5000/api
@@ -92,7 +92,7 @@ Meraki API Endpoint:    https://api.meraki.com/api/v0
 
 Use the proxy address with desired API endpoint (uses server-side API key)
 
-```
+```bash
 $ curl -X GET http://localhost:5000/api/organizations
 
 [{"id":549236,"name":"Meraki DevNet Sandbox"}]
@@ -100,7 +100,7 @@ $ curl -X GET http://localhost:5000/api/organizations
 
 The proxy accepts an API key override. Just specify the new header in the reqest
 
-```
+```bash
 $ curl -X GET \
 >   http://localhost:5000/api/organizations \
 >   -H 'X-Cisco-Meraki-API-Key: 2f301bccd61b6c6BoGuS3f76e5eb66ebd170f'
