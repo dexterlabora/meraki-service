@@ -79,14 +79,14 @@
 <div class="pull-right source-link-container">
   <code class="source-link" data-tmpl="method-tmpl(1)">
     <i class="fa fa-file-o"></i>
-    <a href="meraki-service.js.html">meraki-service.js</a>:<a href="meraki-service.js.html#line76">76</a>
+    <a href="meraki-service.js.html">meraki-service.js</a>:<a href="meraki-service.js.html#line73">73</a>
   </code>
 </div>
 
     
 
     <h4 class="name" id="merakiService">
-      <a href="#params-merakiService"><span class="type-signature"></span>new merakiService</a><span class="signature">(apiKey, baseUrl<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+      <a href="#params-merakiService"><span class="type-signature"></span>new merakiService</a><span class="signature">(apiKey, baseUrl<span class="signature-attributes">opt</span>, proxy<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
 
     </h4>
 
@@ -183,6 +183,8 @@
         
 
         
+        <th>Default</th>
+        
 
         <th class="last">Description</th>
     </tr>
@@ -215,6 +217,10 @@
                 </td>
             
 
+            
+                <td class="default">
+                
+                </td>
             
 
             <td class="description last"><p>The Meraki API key</p></td>
@@ -249,8 +255,51 @@
             
 
             
+                <td class="default">
+                
+                    https://api.meraki.com/api/v0
+                
+                </td>
+            
 
             <td class="description last"><p>The base Meraki API URL. Uses default:<code>https://api.meraki.com/api/v0</code></p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>proxy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>the proxy used for the API call. See https://github.com/axios/axios#request-config for details on format. Uses default: {}</p></td>
         </tr>
 
     
@@ -290,7 +339,7 @@
 
 <!--
 <pre>
-{"comment":"/**\n   * Initialize a Meraki API Service\n   * @constructor\n   * @param {string} apiKey - The Meraki API key\n   * @param {string=} baseUrl - The base Meraki API URL. Uses default:`https://api.meraki.com/api/v0`\n   * @returns {}\n   */","meta":{"range":[1823,2087],"filename":"meraki-service.js","lineno":76,"columnno":2,"path":"/Users/cory.guynn/dev/meraki-service","code":{"id":"astnode100000106","name":"merakiService","type":"MethodDefinition","paramnames":["apiKey","baseUrl"]},"vars":{"":null},"shortpath":"meraki-service.js"},"description":"<p>Initialize a Meraki API Service</p>","kind":"class","params":[{"type":{"names":["string"]},"description":"<p>The Meraki API key</p>","name":"apiKey"},{"type":{"names":["string"]},"optional":true,"description":"<p>The base Meraki API URL. Uses default:<code>https://api.meraki.com/api/v0</code></p>","name":"baseUrl"}],"returns":[{}],"name":"merakiService","longname":"module:Meraki~merakiService","memberof":"module:Meraki","scope":"inner","___id":"T000003R000002","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"merakiService","signature":"<span class=\"signature\">(apiKey, baseUrl<span class=\"signature-attributes\">opt</span>)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-Meraki.html\">Meraki</a>~"]}
+{"comment":"/**\r\n   * Initialize a Meraki API Service\r\n   * @constructor\r\n   * @param {string} apiKey - The Meraki API key\r\n   * @param {string=} baseUrl - The base Meraki API URL. Uses default:`https://api.meraki.com/api/v0`\r\n   * @param {object=} proxy - the proxy used for the API call. See https://github.com/axios/axios#request-config for details on format. Uses default: {}\r\n   * @returns {}\r\n   */","meta":{"range":[2003,2310],"filename":"meraki-service.js","lineno":73,"columnno":2,"path":"C:\\Users\\wmarti231\\Documents\\development\\meraki-service","code":{"id":"astnode100000091","name":"merakiService","type":"MethodDefinition","paramnames":["apiKey","baseUrl","proxy"]},"vars":{"":null},"shortpath":"meraki-service.js"},"description":"<p>Initialize a Meraki API Service</p>","kind":"class","params":[{"type":{"names":["string"]},"description":"<p>The Meraki API key</p>","name":"apiKey"},{"type":{"names":["string"]},"optional":true,"description":"<p>The base Meraki API URL. Uses default:<code>https://api.meraki.com/api/v0</code></p>","name":"baseUrl","defaultvalue":"https://api.meraki.com/api/v0"},{"type":{"names":["object"]},"optional":true,"description":"<p>the proxy used for the API call. See https://github.com/axios/axios#request-config for details on format. Uses default: {}</p>","name":"proxy"}],"returns":[{}],"name":"merakiService","longname":"module:Meraki~merakiService","memberof":"module:Meraki","scope":"inner","___id":"T000003R000002","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"merakiService","signature":"<span class=\"signature\">(apiKey, baseUrl<span class=\"signature-attributes\">opt</span>, proxy<span class=\"signature-attributes\">opt</span>)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-Meraki.html\">Meraki</a>~"]}
 </pre>
 -->
 </div>
@@ -327,7 +376,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Jun 22 2018 12:29:42 GMT+0200 (CEST) using the LOKE theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Jun 27 2018 11:12:16 GMT-0500 (Central Daylight Time) using the LOKE theme.
 </footer>
 
 <script>prettyPrint();</script>

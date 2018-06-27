@@ -1,16 +1,16 @@
 // testmeraki.js
-const Meraki = require('.././meraki-service');
+const Meraki = require(".././meraki-service");
 
 // Environment Variables
 
-const API_KEY = process.env.API_KEY || '2f301bccd61b6c642d250cd3f76e5eb66ebd170f' // Sandbox API Key
-const API_URL = "https://api.meraki.com/api/v0";//'http://localhost:8888' //"https://api.meraki.com/api/v0"; //
+const API_KEY =
+  process.env.API_KEY || "be647eed3046542a895ea9ad07b7f7cef4c002de"; // Sandbox API Key
+const API_URL = "https://api.meraki.com/api/v0"; //'http://localhost:8888' //"https://api.meraki.com/api/v0"; //
 
-const orgId = '549236';
-const netId = 'L_643451796760560141';
-const deviceMac = 'e0:55:3d:10:42:a6';
-const serial = 'Q2HP-6Z82-NGDM';
-
+const orgId = "549236";
+const netId = "L_643451796760560141";
+const deviceMac = "e0:55:3d:10:42:a6";
+const serial = "Q2HP-6Z82-NGDM";
 
 // PII ENV
 /*
@@ -33,8 +33,7 @@ const meraki = new Meraki(API_KEY); // default settings
 // ********************
 
 var url = meraki.baseUrl;
-console.log('API Base URL: ', url);
-
+console.log("API Base URL: ", url);
 
 /*
 meraki.getClientUsageHistory(netId, clientMac).then(res => {
@@ -60,12 +59,9 @@ meraki.getPiiKeys(orgId, optionsPiiKeys).then((res) => {
 });
 */
 
-/*
 meraki.getOrganizations().then(res => {
-    console.log('Organizations: ', res);
-    console.log('res[0]', res[0]);
+  console.log("Organizations: ", res);
 });
-*/
 
 /*
 const NEW_KEY = '2f301bccd61b6c642d250cd3f76e5eb66ebd170f';
@@ -76,7 +72,6 @@ meraki.getOrganizations().then(res => {
     console.log('Organizations: ', res);
 });
 */
-
 
 /*
 meraki.getNetworks(orgId).then(
@@ -136,7 +131,6 @@ meraki.proxy(proxyOptions).then(res => {
 });
 */
 
-
 /*
 const proxyOptions = {
     url: '/organizations',
@@ -147,7 +141,6 @@ meraki.proxy(proxyOptions).then(res => {
     console.log('res[0]', res[0]);
 });
 */
-
 
 /*
 meraki.getClientsForOrg(orgId, 8640000, 'MR').then(res => {
@@ -207,9 +200,6 @@ meraki.getClientsForNetwork('L_643451796760560141', 86400, 'MR').then((res) => {
 });
 */
 
-
-
-
 /*
 const clientMac = '60:e3:ac:f7:48:08';
 const networkId = 'L_643451796760560141';
@@ -227,11 +217,11 @@ meraki.updateClientPolicy(netId, clientMac, timespan, data)
         });
 */
 
-
-meraki.getNetworkIdForDeviceMac(orgId, deviceMac).then((res) => {
-    console.log('Network for device: ', deviceMac, res);
+/*
+meraki.getNetworkIdForDeviceMac(orgId, deviceMac).then(res => {
+  console.log("Network for device: ", deviceMac, res);
 });
-
+*/
 
 /*
 const clients = [
@@ -243,7 +233,6 @@ meraki.getClientPolicyForClients(netId, clients, 86400).then((res) => {
     console.log('Clients: ', res);
 });
 */
-
 
 /*
 function fetchClientsForNetwork() {

@@ -192,7 +192,7 @@
 
 <!--
 <pre>
-{"comment":"/**\n * Admins\n * @module Admins\n */","meta":{"filename":"admins.js","lineno":1,"columnno":0,"path":"/Users/cory.guynn/dev/meraki-service/endpoints","code":{},"shortpath":"endpoints/admins.js"},"description":"<p>Admins</p>","kind":"module","name":"Admins","longname":"module:Admins","___id":"T000002R000041","___s":true,"attribs":"","id":"Admins","ancestors":[]}
+{"comment":"/**\r\n * Admins\r\n * @module Admins\r\n */","meta":{"filename":"admins.js","lineno":1,"columnno":0,"path":"C:\\Users\\wmarti231\\Documents\\development\\meraki-service\\endpoints","code":{},"shortpath":"endpoints/admins.js"},"description":"<p>Admins</p>","kind":"module","name":"Admins","longname":"module:Admins","___id":"T000002R000045","___s":true,"attribs":"","id":"Admins","ancestors":[]}
 </pre>
 -->
 </div>
@@ -269,19 +269,7 @@
     
         <p class="code-caption">Example response</p>
     
-    <pre class="prettyprint"><code>{
-  "id":"549236",
-  "name":"Miles Meraki",
-  "email":"miles@meraki.com",
-  "orgAccess":"none",
-  "tags":[
-    {
-      "tag":"west",
-      "access":"read-only"
-    }
-  ],
-  "networks":[]
-}</code></pre>
+    <pre class="prettyprint"><code>{  "id":"549236",  "name":"Miles Meraki",  "email":"miles@meraki.com",  "orgAccess":"none",  "tags":[    {      "tag":"west",      "access":"read-only"    }  ],  "networks":[]}</code></pre>
 
 
 
@@ -578,7 +566,7 @@
 
 <!--
 <pre>
-{"comment":"/**\n     * Create a new dashboard administrator.\n     *\n     * @memberof module:Admins\n     * @param { Object } param            The dashboard administrator information\n     * @param { string } param.orgId      The organization id\n     * @param { string } param.email      The email of the dashboard administrator. This attribute can not be updated\n     * @param { string } param.name       The name of the dashboard administrator\n     * @param { string } param.orgAcess   The privilege of the dashboard administrator on the organization (full, read-only, none)\n     * @param { Array }  param.tags       The list of tags that the dashboard administrator has privileges on\n     * @return { Promise } A promise holding the newly created dashboard administrator\n     * @example <caption>Example response</caption>\n     * {\n     *   \"id\":\"549236\",\n     *   \"name\":\"Miles Meraki\",\n     *   \"email\":\"miles@meraki.com\",\n     *   \"orgAccess\":\"none\",\n     *   \"tags\":[\n     *     {\n     *       \"tag\":\"west\",\n     *       \"access\":\"read-only\"\n     *     }\n     *   ],\n     *   \"networks\":[]\n     * }\n     */","meta":{"range":[2116,2250],"filename":"admins.js","lineno":67,"columnno":4,"path":"/Users/cory.guynn/dev/meraki-service/endpoints","code":{"id":"astnode100000599","name":"createAdmin","type":"FunctionExpression"},"vars":{"":null},"shortpath":"endpoints/admins.js"},"description":"<p>Create a new dashboard administrator.</p>","memberof":"module:Admins","params":[{"type":{"names":["Object"]},"description":"<p>The dashboard administrator information</p>","name":"param","subparams":[{"type":{"names":["string"]},"description":"<p>The organization id</p>","name":"orgId"},{"type":{"names":["string"]},"description":"<p>The email of the dashboard administrator. This attribute can not be updated</p>","name":"email"},{"type":{"names":["string"]},"description":"<p>The name of the dashboard administrator</p>","name":"name"},{"type":{"names":["string"]},"description":"<p>The privilege of the dashboard administrator on the organization (full, read-only, none)</p>","name":"orgAcess"},{"type":{"names":["Array"]},"description":"<p>The list of tags that the dashboard administrator has privileges on</p>","name":"tags"}]},null,null,null,null,null],"returns":[{"type":{"names":["Promise"]},"description":"<p>A promise holding the newly created dashboard administrator</p>"}],"examples":[{"caption":"Example response","code":"{\n  \"id\":\"549236\",\n  \"name\":\"Miles Meraki\",\n  \"email\":\"miles@meraki.com\",\n  \"orgAccess\":\"none\",\n  \"tags\":[\n    {\n      \"tag\":\"west\",\n      \"access\":\"read-only\"\n    }\n  ],\n  \"networks\":[]\n}"}],"name":"createAdmin","longname":"module:Admins.createAdmin","kind":"function","scope":"static","___id":"T000002R000044","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".createAdmin","signature":"<span class=\"signature\">(param)</span><span class=\"type-signature\"> &rarr; {Promise}</span>","ancestors":["<a href=\"module-Admins.html\">Admins</a>."]}
+{"comment":"/**\r\n     * Create a new dashboard administrator.\r\n     *\r\n     * @memberof module:Admins\r\n     * @param { Object } param            The dashboard administrator information\r\n     * @param { string } param.orgId      The organization id\r\n     * @param { string } param.email      The email of the dashboard administrator. This attribute can not be updated\r\n     * @param { string } param.name       The name of the dashboard administrator\r\n     * @param { string } param.orgAcess   The privilege of the dashboard administrator on the organization (full, read-only, none)\r\n     * @param { Array }  param.tags       The list of tags that the dashboard administrator has privileges on\r\n     * @return { Promise } A promise holding the newly created dashboard administrator\r\n     * @example <caption>Example response</caption>\r\n     * {\r\n     *   \"id\":\"549236\",\r\n     *   \"name\":\"Miles Meraki\",\r\n     *   \"email\":\"miles@meraki.com\",\r\n     *   \"orgAccess\":\"none\",\r\n     *   \"tags\":[\r\n     *     {\r\n     *       \"tag\":\"west\",\r\n     *       \"access\":\"read-only\"\r\n     *     }\r\n     *   ],\r\n     *   \"networks\":[]\r\n     * }\r\n     */","meta":{"range":[2182,2318],"filename":"admins.js","lineno":67,"columnno":4,"path":"C:\\Users\\wmarti231\\Documents\\development\\meraki-service\\endpoints","code":{"id":"astnode100000618","name":"createAdmin","type":"FunctionExpression"},"vars":{"":null},"shortpath":"endpoints/admins.js"},"description":"<p>Create a new dashboard administrator.</p>","memberof":"module:Admins","params":[{"type":{"names":["Object"]},"description":"<p>The dashboard administrator information</p>","name":"param","subparams":[{"type":{"names":["string"]},"description":"<p>The organization id</p>","name":"orgId"},{"type":{"names":["string"]},"description":"<p>The email of the dashboard administrator. This attribute can not be updated</p>","name":"email"},{"type":{"names":["string"]},"description":"<p>The name of the dashboard administrator</p>","name":"name"},{"type":{"names":["string"]},"description":"<p>The privilege of the dashboard administrator on the organization (full, read-only, none)</p>","name":"orgAcess"},{"type":{"names":["Array"]},"description":"<p>The list of tags that the dashboard administrator has privileges on</p>","name":"tags"}]},null,null,null,null,null],"returns":[{"type":{"names":["Promise"]},"description":"<p>A promise holding the newly created dashboard administrator</p>"}],"examples":[{"caption":"Example response","code":"{\r  \"id\":\"549236\",\r  \"name\":\"Miles Meraki\",\r  \"email\":\"miles@meraki.com\",\r  \"orgAccess\":\"none\",\r  \"tags\":[\r    {\r      \"tag\":\"west\",\r      \"access\":\"read-only\"\r    }\r  ],\r  \"networks\":[]\r}"}],"name":"createAdmin","longname":"module:Admins.createAdmin","kind":"function","scope":"static","___id":"T000002R000048","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".createAdmin","signature":"<span class=\"signature\">(param)</span><span class=\"type-signature\"> &rarr; {Promise}</span>","ancestors":["<a href=\"module-Admins.html\">Admins</a>."]}
 </pre>
 -->
 </div>
@@ -601,7 +589,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Jun 22 2018 12:29:42 GMT+0200 (CEST) using the LOKE theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Jun 27 2018 11:12:16 GMT-0500 (Central Daylight Time) using the LOKE theme.
 </footer>
 
 <script>prettyPrint();</script>

@@ -1,4 +1,6 @@
-const JSONbig = require("json-bigint")({ "storeAsString": true });
+const JSONbig = require("json-bigint")
+const JSONBigInt = JSONbig({ "storeAsString": true });
+
 
 const handleBigInt = (data) => {
     try {
@@ -49,7 +51,7 @@ const handleBigInt = (data) => {
   */
  const proxy = {
     proxy (options) {
-     return this.meraki(options, { transformResponse: [handleBigInt] }).then((res) => res.data);
+     return this.meraki(options).then((res) => res.data);
     }
   }
 

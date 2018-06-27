@@ -46,8 +46,7 @@
 
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>
-/**
+            <pre class="prettyprint source linenums"><code>/**
 
 
 ---
@@ -71,29 +70,27 @@ $ Organizations:  [ { id: 549236, name: 'Meraki DevNet Sandbox' } ]
 */
 
 //const admins = require('./endpoints/admins');
-
+const _ = require("underscore")
 const axios = require("axios");
-const JSONbig = require("json-bigint")({ "storeAsString": true });
-
+const JSONbig = require("json-bigint")({ storeAsString: true });
 
 // Meraki Error Handler (parses the error message within responses)
 function _handleError(e) {
   console.log("error in Meraki API call: ", e);
-  if (e.message) { e = e.message }
+  if (e.message) {
+    e = e.message;
+  }
   if (e.response) {
     if (e.response.data) {
       // Meraki specific error message
       if (e.response.data.errors) {
-        console.log(e.response.data.errors[0]);
         e = e.response.data.errors[0];
       }
     } else {
       //console.log(e.response)
       e = e.response;
     }
-  } else {
-    console.log(e);
-  }
+  } 
   return e;
 }
 /**
@@ -113,55 +110,58 @@ function _handleError(e) {
  * @module Meraki
  */
 class merakiService {
-
   /**
    * Initialize a Meraki API Service
    * @constructor
    * @param {string} apiKey - The Meraki API key
    * @param {string=} baseUrl - The base Meraki API URL. Uses default:`https://api.meraki.com/api/v0`
+   * @param {object=} proxy - the proxy used for the API call. See https://github.com/axios/axios#request-config for details on format. Uses default: {}
    * @returns {}
    */
-  constructor(apiKey, baseUrl) {
+  constructor(apiKey, baseUrl = 'https://api.meraki.com/api/v0', proxy = {}) {
     this._apiKey = process.env.API_KEY || apiKey;
-    this._baseUrl = process.env.BASE_URL || baseUrl || 'https://api.meraki.com/api/v0';
+    this._baseUrl = process.env.BASE_URL || baseUrl;
+    this._proxy = proxy;
     this._data; // stores request data to handle redirects properly
 
     this.initMeraki();
   }
 
   // *************
-  // Intialize API 
+  // Intialize API
   // *************
 
   /**
    * @private
    */
   initMeraki() {
-    this.meraki = axios.create({
+    let opts = {
       baseURL: this._baseUrl,
-      maxRedirects: 0,
+      //maxRedirects: 0,
       headers: {
         'X-Cisco-Meraki-API-Key': this._apiKey,
         'Content-Type': "application/json"
-      }
+      },
+      transformResponse: [JSONbig.parse]
+    }
+    if (!_.isEmpty(this._proxy)) {
+      opts.proxy = this._proxy
+    }
+    this.meraki = axios.create(opts);
 
+    this.meraki.interceptors.request.use(config => {
+      //console.log('config', config);
+      //console.log('config.body', config.body);
+      //console.log('config headers', config.headers)
+      //console.log('config request', config.request)
+      config.validateStatus = function(status) {
+        return status == "308" || "307" || "302" || "301"; // do not throw error for redirects
+      };
+
+      this._data = config.body; // cached request to handle redirects
+      this._headers = config.headers; // cached request to handle redirects
+      return config;
     });
-
-    this.meraki.interceptors.request.use(
-      config => {
-        //console.log('config', config);
-        //console.log('config.body', config.body);
-        //console.log('config headers', config.headers)
-        //console.log('config request', config.request)
-        config.validateStatus = function (status) {
-          return status == '308' || '307' || '302' || '301'; // do not throw error for redirects
-        }
-
-        this._data = config.body; // cached request to handle redirects
-        this._headers = config.headers; // cached request to handle redirects
-        return config;
-      }
-    )
 
     this.meraki.interceptors.response.use(
       res => {
@@ -170,18 +170,21 @@ class merakiService {
         //console.log('Meraki Service res:', res.request.path, res.status);
         //console.log('Meraki Service response res.request', res.request);
 
-        if ((res.status == '308' || '307' || '302' || '301') &amp;&amp; res.headers.location) {
+        if (
+          (res.status == "308" || "307" || "302" || "301") &amp;&amp;
+          res.headers.location
+        ) {
           //console.log('REDIRECT')
           var options = {
             url: res.headers.location,
             data: data,
             method: res.request.method,
-            headers: headers,
+            headers: headers
           };
           //console.log('options', options);
-          return this.meraki(options).then((res) => {
+          return this.meraki(options).then(res => {
             //console.log('redirect res', res);
-            return res
+            return res;
           });
         } else {
           //const data = this._data;
@@ -192,7 +195,6 @@ class merakiService {
         return _handleError(error);
       }
     );
-
   }
 
   /**
@@ -224,7 +226,6 @@ class merakiService {
     this._apiKey = apiKey;
     this.initMeraki();
   }
-
 
   /**
    * get current API base URL
@@ -264,8 +265,6 @@ class merakiService {
     this._baseUrl = baseUrl;
     this.initMeraki();
   }
-
-
 }
 
 // ****************
@@ -273,29 +272,42 @@ class merakiService {
 // API Endpoints
 // ~~~~~~~~~~~~~~~~
 // ****************
-Object.assign(merakiService.prototype, require('./endpoints/admins'));
-Object.assign(merakiService.prototype, require('./endpoints/clients'));
-Object.assign(merakiService.prototype, require('./endpoints/configTemplates'));
-Object.assign(merakiService.prototype, require('./endpoints/devices'));
-Object.assign(merakiService.prototype, require('./endpoints/groupPolicies'));
-Object.assign(merakiService.prototype, require('./endpoints/mxCellularFirewallRules'));
-Object.assign(merakiService.prototype, require('./endpoints/mxL3FirewallRules'));
-Object.assign(merakiService.prototype, require('./endpoints/mxVPNFirewallRules'));
-Object.assign(merakiService.prototype, require('./endpoints/mrL3FirewallRules'));
-Object.assign(merakiService.prototype, require('./endpoints/networks'));
-Object.assign(merakiService.prototype, require('./endpoints/organizations'));
-Object.assign(merakiService.prototype, require('./endpoints/pii'));
-Object.assign(merakiService.prototype, require('./endpoints/proxy'));
-Object.assign(merakiService.prototype, require('./endpoints/saml'));
-Object.assign(merakiService.prototype, require('./endpoints/ssids'));
-Object.assign(merakiService.prototype, require('./endpoints/staticRoutes'));
-Object.assign(merakiService.prototype, require('./endpoints/switchPorts'));
-Object.assign(merakiService.prototype, require('./endpoints/vlans'));
+Object.assign(merakiService.prototype, require("./endpoints/admins"));
+Object.assign(merakiService.prototype, require("./endpoints/clients"));
+Object.assign(merakiService.prototype, require("./endpoints/configTemplates"));
+Object.assign(merakiService.prototype, require("./endpoints/devices"));
+Object.assign(merakiService.prototype, require("./endpoints/groupPolicies"));
+Object.assign(
+  merakiService.prototype,
+  require("./endpoints/mxCellularFirewallRules")
+);
+Object.assign(
+  merakiService.prototype,
+  require("./endpoints/mxL3FirewallRules")
+);
+Object.assign(
+  merakiService.prototype,
+  require("./endpoints/mxVPNFirewallRules")
+);
+Object.assign(
+  merakiService.prototype,
+  require("./endpoints/mrL3FirewallRules")
+);
+Object.assign(merakiService.prototype, require("./endpoints/networks"));
+Object.assign(merakiService.prototype, require("./endpoints/organizations"));
+Object.assign(merakiService.prototype, require("./endpoints/pii"));
+Object.assign(merakiService.prototype, require("./endpoints/proxy"));
+Object.assign(merakiService.prototype, require("./endpoints/saml"));
+Object.assign(merakiService.prototype, require("./endpoints/ssids"));
+Object.assign(merakiService.prototype, require("./endpoints/staticRoutes"));
+Object.assign(merakiService.prototype, require("./endpoints/switchPorts"));
+Object.assign(merakiService.prototype, require("./endpoints/vlans"));
 
 // Custom API Scripts
-Object.assign(merakiService.prototype, require('./endpoints/custom'));
+Object.assign(merakiService.prototype, require("./endpoints/custom"));
 
-module.exports = merakiService;</code></pre>
+module.exports = merakiService;
+</code></pre>
         </article>
     </section>
 
@@ -308,7 +320,7 @@ module.exports = merakiService;</code></pre>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Jun 22 2018 12:29:42 GMT+0200 (CEST) using the LOKE theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Jun 27 2018 11:12:16 GMT-0500 (Central Daylight Time) using the LOKE theme.
 </footer>
 
 <script>prettyPrint();</script>
