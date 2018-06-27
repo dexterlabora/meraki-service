@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>meraki-service.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav class="nav">
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Admins.html">Admins</a><ul class='methods'><li data-type='method'><a href="module-Admins.html#.createAdmin">createAdmin</a></li></ul></li><li><a href="module-Clients.html">Clients</a><ul class='methods'><li data-type='method'><a href="module-Clients.html#.getClient">getClient</a></li><li data-type='method'><a href="module-Clients.html#.getClientPolicy">getClientPolicy</a></li><li data-type='method'><a href="module-Clients.html#.getClients">getClients</a></li><li data-type='method'><a href="module-Clients.html#.getClientUsageHistory">getClientUsageHistory</a></li><li data-type='method'><a href="module-Clients.html#.getSplashAuth">getSplashAuth</a></li><li data-type='method'><a href="module-Clients.html#.updateClientPolicy">updateClientPolicy</a></li><li data-type='method'><a href="module-Clients.html#.updateSplashAuth">updateSplashAuth</a></li></ul></li><li><a href="module-Config_Templates.html">Config_Templates</a><ul class='methods'><li data-type='method'><a href="module-Config_Templates.html#.bindTemplate">bindTemplate</a></li><li data-type='method'><a href="module-Config_Templates.html#.getConfigTemplates">getConfigTemplates</a></li><li data-type='method'><a href="module-Config_Templates.html#.removeConfigTemplate">removeConfigTemplate</a></li><li data-type='method'><a href="module-Config_Templates.html#.unbindTemplate">unbindTemplate</a></li></ul></li><li><a href="module-Custom.html">Custom</a><ul class='methods'><li data-type='method'><a href="module-Custom.html#.getClientPolicyForClients">getClientPolicyForClients</a></li><li data-type='method'><a href="module-Custom.html#.getClientsForDevices">getClientsForDevices</a></li><li data-type='method'><a href="module-Custom.html#.getClientsForNetwork">getClientsForNetwork</a></li><li data-type='method'><a href="module-Custom.html#.getClientsForNetworks">getClientsForNetworks</a></li><li data-type='method'><a href="module-Custom.html#.getClientsForOrg">getClientsForOrg</a></li><li data-type='method'><a href="module-Custom.html#.getNetworkIdForDeviceMac">getNetworkIdForDeviceMac</a></li></ul></li><li><a href="module-Devices.html">Devices</a><ul class='methods'><li data-type='method'><a href="module-Devices.html#.claimDevice">claimDevice</a></li><li data-type='method'><a href="module-Devices.html#.getDevice">getDevice</a></li><li data-type='method'><a href="module-Devices.html#.getDevices">getDevices</a></li><li data-type='method'><a href="module-Devices.html#.getPerfScore">getPerfScore</a></li><li data-type='method'><a href="module-Devices.html#.getUplinkStatus">getUplinkStatus</a></li><li data-type='method'><a href="module-Devices.html#.removeDevice">removeDevice</a></li><li data-type='method'><a href="module-Devices.html#.updateDevice">updateDevice</a></li></ul></li><li><a href="module-Group_Policies.html">Group_Policies</a><ul class='methods'><li data-type='method'><a href="module-Group_Policies.html#.getPolicies">getPolicies</a></li></ul></li><li><a href="module-Meraki.html">Meraki</a></li><li><a href="module-Meraki_Settings.html">Meraki/Settings</a></li><li><a href="module-MR_L3_Firewall.html">MR_L3_Firewall</a><ul class='methods'><li data-type='method'><a href="module-MR_L3_Firewall.html#.getL3FirewallRulesMR">getL3FirewallRulesMR</a></li><li data-type='method'><a href="module-MR_L3_Firewall.html#.updateL3FirewallRulesMR">updateL3FirewallRulesMR</a></li></ul></li><li><a href="module-MX_Cell_Firewall.html">MX_Cell_Firewall</a><ul class='methods'><li data-type='method'><a href="module-MX_Cell_Firewall.html#.getCellularFirewallRules">getCellularFirewallRules</a></li><li data-type='method'><a href="module-MX_Cell_Firewall.html#.updateCellularFirewallRules">updateCellularFirewallRules</a></li></ul></li><li><a href="module-MX_L3_Firewall.html">MX_L3_Firewall</a></li><li><a href="module-MX_VPN_Firewall.html">MX_VPN_Firewall</a><ul class='methods'><li data-type='method'><a href="module-MX_VPN_Firewall.html#.getVpnFirewallRules">getVpnFirewallRules</a></li><li data-type='method'><a href="module-MX_VPN_Firewall.html#.updateVpnFirewallRules">updateVpnFirewallRules</a></li></ul></li><li><a href="module-Networks.html">Networks</a><ul class='methods'><li data-type='method'><a href="module-Networks.html#.createNetwork">createNetwork</a></li><li data-type='method'><a href="module-Networks.html#.deleteNetwork">deleteNetwork</a></li><li data-type='method'><a href="module-Networks.html#.getAccessPolicies">getAccessPolicies</a></li><li data-type='method'><a href="module-Networks.html#.getAirmarshal">getAirmarshal</a></li><li data-type='method'><a href="module-Networks.html#.getBluetoothSettings">getBluetoothSettings</a></li><li data-type='method'><a href="module-Networks.html#.getNetwork">getNetwork</a></li><li data-type='method'><a href="module-Networks.html#.getTraffic">getTraffic</a></li><li data-type='method'><a href="module-Networks.html#.updateBluetoothSettings">updateBluetoothSettings</a></li><li data-type='method'><a href="module-Networks.html#.updateNetwork">updateNetwork</a></li></ul></li><li><a href="module-Organizations.html">Organizations</a><ul class='methods'><li data-type='method'><a href="module-Organizations.html#.claimOrderLicenseSerial">claimOrderLicenseSerial</a></li><li data-type='method'><a href="module-Organizations.html#.createOrganization">createOrganization</a></li><li data-type='method'><a href="module-Organizations.html#.createOrganizationClone">createOrganizationClone</a></li><li data-type='method'><a href="module-Organizations.html#.getInventory">getInventory</a></li><li data-type='method'><a href="module-Organizations.html#.getLicenseState">getLicenseState</a></li><li data-type='method'><a href="module-Organizations.html#.getOrganization">getOrganization</a></li><li data-type='method'><a href="module-Organizations.html#.getOrgDevices">getOrgDevices</a></li><li data-type='method'><a href="module-Organizations.html#.getSnmpSettings">getSnmpSettings</a></li><li data-type='method'><a href="module-Organizations.html#.getThirdPartyVpnPeers">getThirdPartyVpnPeers</a></li><li data-type='method'><a href="module-Organizations.html#.updateOrganization">updateOrganization</a></li><li data-type='method'><a href="module-Organizations.html#.updateSnmpSettings">updateSnmpSettings</a></li><li data-type='method'><a href="module-Organizations.html#.updateThirdPartyVpnPeers">updateThirdPartyVpnPeers</a></li></ul></li><li><a href="module-Pii.html">Pii</a><ul class='methods'><li data-type='method'><a href="module-Pii.html#.deletePiiRequest">deletePiiRequest</a></li><li data-type='method'><a href="module-Pii.html#.getPiiKeys">getPiiKeys</a></li><li data-type='method'><a href="module-Pii.html#.getPiiRequest">getPiiRequest</a></li><li data-type='method'><a href="module-Pii.html#.getPiiRequests">getPiiRequests</a></li><li data-type='method'><a href="module-Pii.html#.getSmDevicesForKey">getSmDevicesForKey</a></li><li data-type='method'><a href="module-Pii.html#.getSmOwnersForKey">getSmOwnersForKey</a></li><li data-type='method'><a href="module-Pii.html#.submitPiiRequest">submitPiiRequest</a></li></ul></li><li><a href="module-Proxy.html">Proxy</a></li><li><a href="module-SAML_Roles.html">SAML_Roles</a><ul class='methods'><li data-type='method'><a href="module-SAML_Roles.html#.createSamlRoles">createSamlRoles</a></li><li data-type='method'><a href="module-SAML_Roles.html#.deleteSamlRole">deleteSamlRole</a></li><li data-type='method'><a href="module-SAML_Roles.html#.getSamlRoles">getSamlRoles</a></li><li data-type='method'><a href="module-SAML_Roles.html#.getSamlRoles">getSamlRoles</a></li><li data-type='method'><a href="module-SAML_Roles.html#.updateSamlRole">updateSamlRole</a></li></ul></li><li><a href="module-SSIDs.html">SSIDs</a><ul class='methods'><li data-type='method'><a href="module-SSIDs.html#.getSsid">getSsid</a></li><li data-type='method'><a href="module-SSIDs.html#.getSsids">getSsids</a></li><li data-type='method'><a href="module-SSIDs.html#.updateSsid">updateSsid</a></li></ul></li><li><a href="module-Static_Routes.html">Static_Routes</a><ul class='methods'><li data-type='method'><a href="module-Static_Routes.html#.addStaticRoute">addStaticRoute</a></li><li data-type='method'><a href="module-Static_Routes.html#.deleteStaticRoute">deleteStaticRoute</a></li><li data-type='method'><a href="module-Static_Routes.html#.getStaticRoute">getStaticRoute</a></li><li data-type='method'><a href="module-Static_Routes.html#.getStaticRoutes">getStaticRoutes</a></li><li data-type='method'><a href="module-Static_Routes.html#.updateStaticRoute">updateStaticRoute</a></li></ul></li><li><a href="module-Switch_Ports.html">Switch_Ports</a><ul class='methods'><li data-type='method'><a href="module-Switch_Ports.html#.getSwitchPort">getSwitchPort</a></li><li data-type='method'><a href="module-Switch_Ports.html#.getSwitchPorts">getSwitchPorts</a></li><li data-type='method'><a href="module-Switch_Ports.html#.updateSwitchPort">updateSwitchPort</a></li></ul></li><li><a href="module-VLANs.html">VLANs</a><ul class='methods'><li data-type='method'><a href="module-VLANs.html#.addVlan">addVlan</a></li><li data-type='method'><a href="module-VLANs.html#.deleteVlan">deleteVlan</a></li><li data-type='method'><a href="module-VLANs.html#.getVlan">getVlan</a></li><li data-type='method'><a href="module-VLANs.html#.getVlans">getVlans</a></li><li data-type='method'><a href="module-VLANs.html#.updateVlan">updateVlan</a></li></ul></li></ul><h3>Classes</h3><ul><li><a href="module-Meraki-merakiService.html">merakiService</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">meraki-service.js</h1>
+    
+
+    <!--container.tmpl-->
+
+
+
+
+    <!--source.tmpl-->
+
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>
+/**
+
+
+---
+
+It is easy to duplicate any of the methods to and modify them for new API endpoints.
+
+The service requires a few dependencies, which must be installed. 
+Install:
+npm install axios json-bigint --save
+
+// index.js
+const Meraki = require('meraki-service');
+const meraki = new Meraki('YourAPIKey','https://api.meraki.com/api/v0');
+
+meraki.getOrganizations().then(res => {
+    console.log('Organizations: ', res.data);
+});
+
+$ Organizations:  [ { id: 549236, name: 'Meraki DevNet Sandbox' } ]
+
+*/
+
+//const admins = require('./endpoints/admins');
+
+const axios = require("axios");
+const JSONbig = require("json-bigint")({ "storeAsString": true });
+
+
+// Meraki Error Handler (parses the error message within responses)
+function _handleError(e) {
+  console.log("error in Meraki API call: ", e);
+  if (e.message) { e = e.message }
+  if (e.response) {
+    if (e.response.data) {
+      // Meraki specific error message
+      if (e.response.data.errors) {
+        console.log(e.response.data.errors[0]);
+        e = e.response.data.errors[0];
+      }
+    } else {
+      //console.log(e.response)
+      e = e.response;
+    }
+  } else {
+    console.log(e);
+  }
+  return e;
+}
+/**
+ * # Meraki Service for the Cisco Meraki Dashboard API
+ * 
+ * A collection of functions and helpers to interact with the API. 
+
+ * -- For use with NodeJS or frontend JavaScript applications.
+
+ * Features: 
+ * Collection of common Dashboard API calls
+ * Handles URL redirects
+ * Handles Meraki error messages
+ * Custom scripts for common API traversals
+ * 
+ * @class
+ * @module Meraki
+ */
+class merakiService {
+
+  /**
+   * Initialize a Meraki API Service
+   * @constructor
+   * @param {string} apiKey - The Meraki API key
+   * @param {string=} baseUrl - The base Meraki API URL. Uses default:`https://api.meraki.com/api/v0`
+   * @returns {}
+   */
+  constructor(apiKey, baseUrl) {
+    this._apiKey = process.env.API_KEY || apiKey;
+    this._baseUrl = process.env.BASE_URL || baseUrl || 'https://api.meraki.com/api/v0';
+    this._data; // stores request data to handle redirects properly
+
+    this.initMeraki();
+  }
+
+  // *************
+  // Intialize API 
+  // *************
+
+  /**
+   * @private
+   */
+  initMeraki() {
+    this.meraki = axios.create({
+      baseURL: this._baseUrl,
+      maxRedirects: 0,
+      headers: {
+        'X-Cisco-Meraki-API-Key': this._apiKey,
+        'Content-Type': "application/json"
+      }
+
+    });
+
+    this.meraki.interceptors.request.use(
+      config => {
+        //console.log('config', config);
+        //console.log('config.body', config.body);
+        //console.log('config headers', config.headers)
+        //console.log('config request', config.request)
+        config.validateStatus = function (status) {
+          return status == '308' || '307' || '302' || '301'; // do not throw error for redirects
+        }
+
+        this._data = config.body; // cached request to handle redirects
+        this._headers = config.headers; // cached request to handle redirects
+        return config;
+      }
+    )
+
+    this.meraki.interceptors.response.use(
+      res => {
+        const data = this._data;
+        const headers = this._headers;
+        //console.log('Meraki Service res:', res.request.path, res.status);
+        //console.log('Meraki Service response res.request', res.request);
+
+        if ((res.status == '308' || '307' || '302' || '301') &amp;&amp; res.headers.location) {
+          //console.log('REDIRECT')
+          var options = {
+            url: res.headers.location,
+            data: data,
+            method: res.request.method,
+            headers: headers,
+          };
+          //console.log('options', options);
+          return this.meraki(options).then((res) => {
+            //console.log('redirect res', res);
+            return res
+          });
+        } else {
+          //const data = this._data;
+          return res;
+        }
+      },
+      error => {
+        return _handleError(error);
+      }
+    );
+
+  }
+
+  /**
+   * Getters &amp; Setters for Global API Options
+   * @module Meraki/Settings
+   */
+
+  /* disabled. is this a security concern?
+  get apiKey() {
+    return this._apiKey;
+  }
+  */
+  /**
+  * set API key
+  * @name set:apiKey
+  * @memberof module:Meraki/Settings
+  * @param {string} apiKey
+  * @example &lt;caption>Example Assignment&lt;/caption>
+  const NEW_KEY = '2f301bccd61b6c642d250cd3f76e5eb66ebd170f';
+  meraki.apiKey = NEW_KEY;
+
+  meraki.getOrganizations().then(res => {
+      console.log('Organizations: ', res.data);
+  });
+  * @example &lt;caption>Example Response&lt;/caption>
+  * Organizations:  [{"id":549236,"name":"Meraki DevNet Sandbox"}]
+  */
+  set apiKey(apiKey) {
+    this._apiKey = apiKey;
+    this.initMeraki();
+  }
+
+
+  /**
+   * get current API base URL
+   * @name get:baseUrl
+   * @memberof module:Meraki/Settings
+   * @return {string} - Meraki API FQDN `https://api.meraki.com/api/v0`
+   * @example &lt;caption>Example Request&lt;/caption>
+    const meraki = new Meraki(API_KEY);
+    var url = meraki.baseUrl;
+    console.log('API Base URL: ', url);
+    @example &lt;caption>Example Response&lt;/caption>
+    API Base URL:  https://api.meraki.com/api/v0
+   */
+
+  get baseUrl() {
+    return this._baseUrl;
+  }
+
+  /**
+   * set API base URL
+   * @name set:baseUrl
+   * @memberof module:Meraki/Settings
+   * @param {string} baseUrl - Meraki API FQDN `https://api.meraki.com/api/v0` or `https://myProxyServer/api`
+   * @example &lt;caption>Example Assignment&lt;/caption>
+   * 
+    const NEW_KEY = '2f301bccd61b6c642d250cd3f76e5eb66ebd170f';
+    meraki.apiKey = NEW_KEY;
+
+    meraki.getOrganizations().then(res => {
+      console.log('Organizations: ', res.data);
+    });
+   * @example &lt;caption>Example Response&lt;/caption> 
+   * Organizations:  [{"id":549236,"name":"Meraki DevNet Sandbox"}]
+   * 
+   */
+  set baseUrl(baseUrl) {
+    this._baseUrl = baseUrl;
+    this.initMeraki();
+  }
+
+
+}
+
+// ****************
+// ~~~~~~~~~~~~~~~~
+// API Endpoints
+// ~~~~~~~~~~~~~~~~
+// ****************
+Object.assign(merakiService.prototype, require('./endpoints/admins'));
+Object.assign(merakiService.prototype, require('./endpoints/clients'));
+Object.assign(merakiService.prototype, require('./endpoints/configTemplates'));
+Object.assign(merakiService.prototype, require('./endpoints/devices'));
+Object.assign(merakiService.prototype, require('./endpoints/groupPolicies'));
+Object.assign(merakiService.prototype, require('./endpoints/mxCellularFirewallRules'));
+Object.assign(merakiService.prototype, require('./endpoints/mxL3FirewallRules'));
+Object.assign(merakiService.prototype, require('./endpoints/mxVPNFirewallRules'));
+Object.assign(merakiService.prototype, require('./endpoints/mrL3FirewallRules'));
+Object.assign(merakiService.prototype, require('./endpoints/networks'));
+Object.assign(merakiService.prototype, require('./endpoints/organizations'));
+Object.assign(merakiService.prototype, require('./endpoints/pii'));
+Object.assign(merakiService.prototype, require('./endpoints/proxy'));
+Object.assign(merakiService.prototype, require('./endpoints/saml'));
+Object.assign(merakiService.prototype, require('./endpoints/ssids'));
+Object.assign(merakiService.prototype, require('./endpoints/staticRoutes'));
+Object.assign(merakiService.prototype, require('./endpoints/switchPorts'));
+Object.assign(merakiService.prototype, require('./endpoints/vlans'));
+
+// Custom API Scripts
+Object.assign(merakiService.prototype, require('./endpoints/custom'));
+
+module.exports = merakiService;</code></pre>
+        </article>
+    </section>
+
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Jun 22 2018 12:29:42 GMT+0200 (CEST) using the LOKE theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

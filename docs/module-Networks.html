@@ -1,0 +1,1980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Networks - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav class="nav">
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Admins.html">Admins</a><ul class='methods'><li data-type='method'><a href="module-Admins.html#.createAdmin">createAdmin</a></li></ul></li><li><a href="module-Clients.html">Clients</a><ul class='methods'><li data-type='method'><a href="module-Clients.html#.getClient">getClient</a></li><li data-type='method'><a href="module-Clients.html#.getClientPolicy">getClientPolicy</a></li><li data-type='method'><a href="module-Clients.html#.getClients">getClients</a></li><li data-type='method'><a href="module-Clients.html#.getClientUsageHistory">getClientUsageHistory</a></li><li data-type='method'><a href="module-Clients.html#.getSplashAuth">getSplashAuth</a></li><li data-type='method'><a href="module-Clients.html#.updateClientPolicy">updateClientPolicy</a></li><li data-type='method'><a href="module-Clients.html#.updateSplashAuth">updateSplashAuth</a></li></ul></li><li><a href="module-Config_Templates.html">Config_Templates</a><ul class='methods'><li data-type='method'><a href="module-Config_Templates.html#.bindTemplate">bindTemplate</a></li><li data-type='method'><a href="module-Config_Templates.html#.getConfigTemplates">getConfigTemplates</a></li><li data-type='method'><a href="module-Config_Templates.html#.removeConfigTemplate">removeConfigTemplate</a></li><li data-type='method'><a href="module-Config_Templates.html#.unbindTemplate">unbindTemplate</a></li></ul></li><li><a href="module-Custom.html">Custom</a><ul class='methods'><li data-type='method'><a href="module-Custom.html#.getClientPolicyForClients">getClientPolicyForClients</a></li><li data-type='method'><a href="module-Custom.html#.getClientsForDevices">getClientsForDevices</a></li><li data-type='method'><a href="module-Custom.html#.getClientsForNetwork">getClientsForNetwork</a></li><li data-type='method'><a href="module-Custom.html#.getClientsForNetworks">getClientsForNetworks</a></li><li data-type='method'><a href="module-Custom.html#.getClientsForOrg">getClientsForOrg</a></li><li data-type='method'><a href="module-Custom.html#.getNetworkIdForDeviceMac">getNetworkIdForDeviceMac</a></li></ul></li><li><a href="module-Devices.html">Devices</a><ul class='methods'><li data-type='method'><a href="module-Devices.html#.claimDevice">claimDevice</a></li><li data-type='method'><a href="module-Devices.html#.getDevice">getDevice</a></li><li data-type='method'><a href="module-Devices.html#.getDevices">getDevices</a></li><li data-type='method'><a href="module-Devices.html#.getPerfScore">getPerfScore</a></li><li data-type='method'><a href="module-Devices.html#.getUplinkStatus">getUplinkStatus</a></li><li data-type='method'><a href="module-Devices.html#.removeDevice">removeDevice</a></li><li data-type='method'><a href="module-Devices.html#.updateDevice">updateDevice</a></li></ul></li><li><a href="module-Group_Policies.html">Group_Policies</a><ul class='methods'><li data-type='method'><a href="module-Group_Policies.html#.getPolicies">getPolicies</a></li></ul></li><li><a href="module-Meraki.html">Meraki</a></li><li><a href="module-Meraki_Settings.html">Meraki/Settings</a></li><li><a href="module-MR_L3_Firewall.html">MR_L3_Firewall</a><ul class='methods'><li data-type='method'><a href="module-MR_L3_Firewall.html#.getL3FirewallRulesMR">getL3FirewallRulesMR</a></li><li data-type='method'><a href="module-MR_L3_Firewall.html#.updateL3FirewallRulesMR">updateL3FirewallRulesMR</a></li></ul></li><li><a href="module-MX_Cell_Firewall.html">MX_Cell_Firewall</a><ul class='methods'><li data-type='method'><a href="module-MX_Cell_Firewall.html#.getCellularFirewallRules">getCellularFirewallRules</a></li><li data-type='method'><a href="module-MX_Cell_Firewall.html#.updateCellularFirewallRules">updateCellularFirewallRules</a></li></ul></li><li><a href="module-MX_L3_Firewall.html">MX_L3_Firewall</a></li><li><a href="module-MX_VPN_Firewall.html">MX_VPN_Firewall</a><ul class='methods'><li data-type='method'><a href="module-MX_VPN_Firewall.html#.getVpnFirewallRules">getVpnFirewallRules</a></li><li data-type='method'><a href="module-MX_VPN_Firewall.html#.updateVpnFirewallRules">updateVpnFirewallRules</a></li></ul></li><li><a href="module-Networks.html">Networks</a><ul class='methods'><li data-type='method'><a href="module-Networks.html#.createNetwork">createNetwork</a></li><li data-type='method'><a href="module-Networks.html#.deleteNetwork">deleteNetwork</a></li><li data-type='method'><a href="module-Networks.html#.getAccessPolicies">getAccessPolicies</a></li><li data-type='method'><a href="module-Networks.html#.getAirmarshal">getAirmarshal</a></li><li data-type='method'><a href="module-Networks.html#.getBluetoothSettings">getBluetoothSettings</a></li><li data-type='method'><a href="module-Networks.html#.getNetwork">getNetwork</a></li><li data-type='method'><a href="module-Networks.html#.getTraffic">getTraffic</a></li><li data-type='method'><a href="module-Networks.html#.updateBluetoothSettings">updateBluetoothSettings</a></li><li data-type='method'><a href="module-Networks.html#.updateNetwork">updateNetwork</a></li></ul></li><li><a href="module-Organizations.html">Organizations</a><ul class='methods'><li data-type='method'><a href="module-Organizations.html#.claimOrderLicenseSerial">claimOrderLicenseSerial</a></li><li data-type='method'><a href="module-Organizations.html#.createOrganization">createOrganization</a></li><li data-type='method'><a href="module-Organizations.html#.createOrganizationClone">createOrganizationClone</a></li><li data-type='method'><a href="module-Organizations.html#.getInventory">getInventory</a></li><li data-type='method'><a href="module-Organizations.html#.getLicenseState">getLicenseState</a></li><li data-type='method'><a href="module-Organizations.html#.getOrganization">getOrganization</a></li><li data-type='method'><a href="module-Organizations.html#.getOrgDevices">getOrgDevices</a></li><li data-type='method'><a href="module-Organizations.html#.getSnmpSettings">getSnmpSettings</a></li><li data-type='method'><a href="module-Organizations.html#.getThirdPartyVpnPeers">getThirdPartyVpnPeers</a></li><li data-type='method'><a href="module-Organizations.html#.updateOrganization">updateOrganization</a></li><li data-type='method'><a href="module-Organizations.html#.updateSnmpSettings">updateSnmpSettings</a></li><li data-type='method'><a href="module-Organizations.html#.updateThirdPartyVpnPeers">updateThirdPartyVpnPeers</a></li></ul></li><li><a href="module-Pii.html">Pii</a><ul class='methods'><li data-type='method'><a href="module-Pii.html#.deletePiiRequest">deletePiiRequest</a></li><li data-type='method'><a href="module-Pii.html#.getPiiKeys">getPiiKeys</a></li><li data-type='method'><a href="module-Pii.html#.getPiiRequest">getPiiRequest</a></li><li data-type='method'><a href="module-Pii.html#.getPiiRequests">getPiiRequests</a></li><li data-type='method'><a href="module-Pii.html#.getSmDevicesForKey">getSmDevicesForKey</a></li><li data-type='method'><a href="module-Pii.html#.getSmOwnersForKey">getSmOwnersForKey</a></li><li data-type='method'><a href="module-Pii.html#.submitPiiRequest">submitPiiRequest</a></li></ul></li><li><a href="module-Proxy.html">Proxy</a></li><li><a href="module-SAML_Roles.html">SAML_Roles</a><ul class='methods'><li data-type='method'><a href="module-SAML_Roles.html#.createSamlRoles">createSamlRoles</a></li><li data-type='method'><a href="module-SAML_Roles.html#.deleteSamlRole">deleteSamlRole</a></li><li data-type='method'><a href="module-SAML_Roles.html#.getSamlRoles">getSamlRoles</a></li><li data-type='method'><a href="module-SAML_Roles.html#.getSamlRoles">getSamlRoles</a></li><li data-type='method'><a href="module-SAML_Roles.html#.updateSamlRole">updateSamlRole</a></li></ul></li><li><a href="module-SSIDs.html">SSIDs</a><ul class='methods'><li data-type='method'><a href="module-SSIDs.html#.getSsid">getSsid</a></li><li data-type='method'><a href="module-SSIDs.html#.getSsids">getSsids</a></li><li data-type='method'><a href="module-SSIDs.html#.updateSsid">updateSsid</a></li></ul></li><li><a href="module-Static_Routes.html">Static_Routes</a><ul class='methods'><li data-type='method'><a href="module-Static_Routes.html#.addStaticRoute">addStaticRoute</a></li><li data-type='method'><a href="module-Static_Routes.html#.deleteStaticRoute">deleteStaticRoute</a></li><li data-type='method'><a href="module-Static_Routes.html#.getStaticRoute">getStaticRoute</a></li><li data-type='method'><a href="module-Static_Routes.html#.getStaticRoutes">getStaticRoutes</a></li><li data-type='method'><a href="module-Static_Routes.html#.updateStaticRoute">updateStaticRoute</a></li></ul></li><li><a href="module-Switch_Ports.html">Switch_Ports</a><ul class='methods'><li data-type='method'><a href="module-Switch_Ports.html#.getSwitchPort">getSwitchPort</a></li><li data-type='method'><a href="module-Switch_Ports.html#.getSwitchPorts">getSwitchPorts</a></li><li data-type='method'><a href="module-Switch_Ports.html#.updateSwitchPort">updateSwitchPort</a></li></ul></li><li><a href="module-VLANs.html">VLANs</a><ul class='methods'><li data-type='method'><a href="module-VLANs.html#.addVlan">addVlan</a></li><li data-type='method'><a href="module-VLANs.html#.deleteVlan">deleteVlan</a></li><li data-type='method'><a href="module-VLANs.html#.getVlan">getVlan</a></li><li data-type='method'><a href="module-VLANs.html#.getVlans">getVlans</a></li><li data-type='method'><a href="module-VLANs.html#.updateVlan">updateVlan</a></li></ul></li></ul><h3>Classes</h3><ul><li><a href="module-Meraki-merakiService.html">merakiService</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Networks</h1>
+    
+
+    <!--container.tmpl-->
+
+
+
+
+
+<section>
+
+
+
+<header data-tmpl="container.tmpl">
+    
+      <h2>Module: Networks</h2>
+        
+            
+        
+    
+
+    
+      <div class="bs-callout bs-callout-default">
+        <h5>Members</h5>
+        <br />
+        <dl class="dl-horizontal methods-members">
+        <dt>Methods</dt><dd><ul>
+            <li><a href="#createNetwork">createNetwork</a></li>
+            
+            <li><a href="#deleteNetwork">deleteNetwork</a></li>
+            
+            <li><a href="#getAccessPolicies">getAccessPolicies</a></li>
+            
+            <li><a href="#getAirmarshal">getAirmarshal</a></li>
+            
+            <li><a href="#getBluetoothSettings">getBluetoothSettings</a></li>
+            
+            <li><a href="#getNetwork">getNetwork</a></li>
+            
+            <li><a href="#getTraffic">getTraffic</a></li>
+            
+            <li><a href="#updateBluetoothSettings">updateBluetoothSettings</a></li>
+            
+            <li><a href="#updateNetwork">updateNetwork</a></li>
+            </ul></dd></dl></div>
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Networks</p></div>
+        
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="endpoints_networks.js.html">networks.js</a>:<a href="endpoints_networks.js.html#line2">2</a>
+  </code>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-Networks">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="endpoints_networks.js.html">networks.js</a>:<a href="endpoints_networks.js.html#line2">2</a>
+  </code>
+</div>
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * Networks\n * @module Networks\n */","meta":{"filename":"networks.js","lineno":2,"columnno":0,"path":"/Users/cory.guynn/dev/meraki-service/endpoints","code":{},"shortpath":"endpoints/networks.js"},"description":"<p>Networks</p>","kind":"module","name":"Networks","longname":"module:Networks","___id":"T000002R000134","___s":true,"attribs":"","id":"Networks","ancestors":[]}
+</pre>
+-->
+</div>
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="endpoints_networks.js.html">networks.js</a>:<a href="endpoints_networks.js.html#line53">53</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id=".createNetwork">
+      <a href="#params-createNetwork"><span class="type-signature">(static) </span>createNetwork</a><span class="signature">(orgId, data)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Create a network</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-createNetwork">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-createNetwork" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>orgId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n     * Create a network\n     * @memberof module:Networks\n     * @param {*} orgId \n     * @param {*} data \n     */","meta":{"range":[1262,1602],"filename":"networks.js","lineno":53,"columnno":4,"path":"/Users/cory.guynn/dev/meraki-service/endpoints","code":{"id":"astnode100002383","name":"createNetwork","type":"FunctionExpression"},"vars":{"":null},"shortpath":"endpoints/networks.js"},"description":"<p>Create a network</p>","memberof":"module:Networks","params":[{"type":{"names":["*"]},"name":"orgId"},{"type":{"names":["*"]},"name":"data"}],"name":"createNetwork","longname":"module:Networks.createNetwork","kind":"function","scope":"static","___id":"T000002R000139","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".createNetwork","signature":"<span class=\"signature\">(orgId, data)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-Networks.html\">Networks</a>."]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="endpoints_networks.js.html">networks.js</a>:<a href="endpoints_networks.js.html#line68">68</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id=".deleteNetwork">
+      <a href="#params-deleteNetwork"><span class="type-signature">(static) </span>deleteNetwork</a><span class="signature">(netId)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Delete a network</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-deleteNetwork">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-deleteNetwork" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>netId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n     * Delete a network\n     * @memberof module:Networks\n     * @param {*} netId \n     */","meta":{"range":[1707,1918],"filename":"networks.js","lineno":68,"columnno":4,"path":"/Users/cory.guynn/dev/meraki-service/endpoints","code":{"id":"astnode100002433","name":"deleteNetwork","type":"FunctionExpression"},"vars":{"":null},"shortpath":"endpoints/networks.js"},"description":"<p>Delete a network</p>","memberof":"module:Networks","params":[{"type":{"names":["*"]},"name":"netId"}],"name":"deleteNetwork","longname":"module:Networks.deleteNetwork","kind":"function","scope":"static","___id":"T000002R000140","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".deleteNetwork","signature":"<span class=\"signature\">(netId)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-Networks.html\">Networks</a>."]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="endpoints_networks.js.html">networks.js</a>:<a href="endpoints_networks.js.html#line96">96</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id=".getAccessPolicies">
+      <a href="#params-getAccessPolicies"><span class="type-signature">(static) </span>getAccessPolicies</a><span class="signature">(netId)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Return access policies for a network of switches</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getAccessPolicies">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-getAccessPolicies" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>netId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n     * Return access policies for a network of switches\n     * @memberof module:Networks\n     * @param {*} netId \n     */","meta":{"range":[2557,2789],"filename":"networks.js","lineno":96,"columnno":4,"path":"/Users/cory.guynn/dev/meraki-service/endpoints","code":{"id":"astnode100002518","name":"getAccessPolicies","type":"FunctionExpression"},"vars":{"":null},"shortpath":"endpoints/networks.js"},"description":"<p>Return access policies for a network of switches</p>","memberof":"module:Networks","params":[{"type":{"names":["*"]},"name":"netId"}],"name":"getAccessPolicies","longname":"module:Networks.getAccessPolicies","kind":"function","scope":"static","___id":"T000002R000142","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".getAccessPolicies","signature":"<span class=\"signature\">(netId)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-Networks.html\">Networks</a>."]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="endpoints_networks.js.html">networks.js</a>:<a href="endpoints_networks.js.html#line133">133</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id=".getAirmarshal">
+      <a href="#params-getAirmarshal"><span class="type-signature">(static) </span>getAirmarshal</a><span class="signature">(netId, timespan)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Return Air Marshal scan results from a network</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getAirmarshal">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-getAirmarshal" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>netId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>timespan</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n     * Return Air Marshal scan results from a network\n     * @memberof module:Networks\n     * @param {*} netId \n     * @param {*} timespan \n     */","meta":{"range":[3705,4068],"filename":"networks.js","lineno":133,"columnno":4,"path":"/Users/cory.guynn/dev/meraki-service/endpoints","code":{"id":"astnode100002626","name":"getAirmarshal","type":"FunctionExpression"},"vars":{"":null},"shortpath":"endpoints/networks.js"},"description":"<p>Return Air Marshal scan results from a network</p>","memberof":"module:Networks","params":[{"type":{"names":["*"]},"name":"netId"},{"type":{"names":["*"]},"name":"timespan"}],"name":"getAirmarshal","longname":"module:Networks.getAirmarshal","kind":"function","scope":"static","___id":"T000002R000145","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".getAirmarshal","signature":"<span class=\"signature\">(netId, timespan)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-Networks.html\">Networks</a>."]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="endpoints_networks.js.html">networks.js</a>:<a href="endpoints_networks.js.html#line108">108</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id=".getBluetoothSettings">
+      <a href="#params-getBluetoothSettings"><span class="type-signature">(static) </span>getBluetoothSettings</a><span class="signature">(netId)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Return the bluetooth settings for a network (MR)</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getBluetoothSettings">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-getBluetoothSettings" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>netId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n     * Return the bluetooth settings for a network (MR)\n     * @memberof module:Networks\n     * @param {*} netId \n     */","meta":{"range":[2926,3164],"filename":"networks.js","lineno":108,"columnno":4,"path":"/Users/cory.guynn/dev/meraki-service/endpoints","code":{"id":"astnode100002554","name":"getBluetoothSettings","type":"FunctionExpression"},"vars":{"":null},"shortpath":"endpoints/networks.js"},"description":"<p>Return the bluetooth settings for a network (MR)</p>","memberof":"module:Networks","params":[{"type":{"names":["*"]},"name":"netId"}],"name":"getBluetoothSettings","longname":"module:Networks.getBluetoothSettings","kind":"function","scope":"static","___id":"T000002R000143","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".getBluetoothSettings","signature":"<span class=\"signature\">(netId)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-Networks.html\">Networks</a>."]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="endpoints_networks.js.html">networks.js</a>:<a href="endpoints_networks.js.html#line24">24</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id=".getNetwork">
+      <a href="#params-getNetwork"><span class="type-signature">(static) </span>getNetwork</a><span class="signature">(netId)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Return a network</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getNetwork">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-getNetwork" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>netId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n     * Return a network\n     * @memberof module:Networks\n     * @param {*} netId \n     */","meta":{"range":[479,684],"filename":"networks.js","lineno":24,"columnno":4,"path":"/Users/cory.guynn/dev/meraki-service/endpoints","code":{"id":"astnode100002301","name":"getNetwork","type":"FunctionExpression"},"vars":{"":null},"shortpath":"endpoints/networks.js"},"description":"<p>Return a network</p>","memberof":"module:Networks","params":[{"type":{"names":["*"]},"name":"netId"}],"name":"getNetwork","longname":"module:Networks.getNetwork","kind":"function","scope":"static","___id":"T000002R000137","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".getNetwork","signature":"<span class=\"signature\">(netId)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-Networks.html\">Networks</a>."]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="endpoints_networks.js.html">networks.js</a>:<a href="endpoints_networks.js.html#line81">81</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id=".getTraffic">
+      <a href="#params-getTraffic"><span class="type-signature">(static) </span>getTraffic</a><span class="signature">(netId, timespan)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Return traffic for a network</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getTraffic">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-getTraffic" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>netId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>timespan</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n     * Return traffic for a network\n     * @memberof module:Networks\n     * @param {*} netId \n     * @param {*} timespan \n     */","meta":{"range":[2063,2420],"filename":"networks.js","lineno":81,"columnno":4,"path":"/Users/cory.guynn/dev/meraki-service/endpoints","code":{"id":"astnode100002467","name":"getTraffic","type":"FunctionExpression"},"vars":{"":null},"shortpath":"endpoints/networks.js"},"description":"<p>Return traffic for a network</p>","memberof":"module:Networks","params":[{"type":{"names":["*"]},"name":"netId"},{"type":{"names":["*"]},"name":"timespan"}],"name":"getTraffic","longname":"module:Networks.getTraffic","kind":"function","scope":"static","___id":"T000002R000141","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".getTraffic","signature":"<span class=\"signature\">(netId, timespan)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-Networks.html\">Networks</a>."]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="endpoints_networks.js.html">networks.js</a>:<a href="endpoints_networks.js.html#line120">120</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id=".updateBluetoothSettings">
+      <a href="#params-updateBluetoothSettings"><span class="type-signature">(static) </span>updateBluetoothSettings</a><span class="signature">(netId)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Update the bluetooth settings for a network (MR)</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-updateBluetoothSettings">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-updateBluetoothSettings" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>netId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n     * Update the bluetooth settings for a network (MR)\n     * @memberof module:Networks\n     * @param {*} netId \n     */","meta":{"range":[3301,3542],"filename":"networks.js","lineno":120,"columnno":4,"path":"/Users/cory.guynn/dev/meraki-service/endpoints","code":{"id":"astnode100002590","name":"updateBluetoothSettings","type":"FunctionExpression"},"vars":{"":null},"shortpath":"endpoints/networks.js"},"description":"<p>Update the bluetooth settings for a network (MR)</p>","memberof":"module:Networks","params":[{"type":{"names":["*"]},"name":"netId"}],"name":"updateBluetoothSettings","longname":"module:Networks.updateBluetoothSettings","kind":"function","scope":"static","___id":"T000002R000144","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".updateBluetoothSettings","signature":"<span class=\"signature\">(netId)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-Networks.html\">Networks</a>."]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="endpoints_networks.js.html">networks.js</a>:<a href="endpoints_networks.js.html#line37">37</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id=".updateNetwork">
+      <a href="#params-updateNetwork"><span class="type-signature">(static) </span>updateNetwork</a><span class="signature">(netId, data)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Update a network</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-updateNetwork">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-updateNetwork" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>netId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n     * Update a network\n     * @memberof module:Networks\n     * @param {*} netId \n     * @param {*} data \n     */","meta":{"range":[813,1133],"filename":"networks.js","lineno":37,"columnno":4,"path":"/Users/cory.guynn/dev/meraki-service/endpoints","code":{"id":"astnode100002335","name":"updateNetwork","type":"FunctionExpression"},"vars":{"":null},"shortpath":"endpoints/networks.js"},"description":"<p>Update a network</p>","memberof":"module:Networks","params":[{"type":{"names":["*"]},"name":"netId"},{"type":{"names":["*"]},"name":"data"}],"name":"updateNetwork","longname":"module:Networks.updateNetwork","kind":"function","scope":"static","___id":"T000002R000138","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".updateNetwork","signature":"<span class=\"signature\">(netId, data)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-Networks.html\">Networks</a>."]}
+</pre>
+-->
+</div>
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Jun 22 2018 12:29:42 GMT+0200 (CEST) using the LOKE theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

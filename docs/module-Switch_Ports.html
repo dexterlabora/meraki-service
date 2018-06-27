@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Switch_Ports - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav class="nav">
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Admins.html">Admins</a><ul class='methods'><li data-type='method'><a href="module-Admins.html#.createAdmin">createAdmin</a></li></ul></li><li><a href="module-Clients.html">Clients</a><ul class='methods'><li data-type='method'><a href="module-Clients.html#.getClient">getClient</a></li><li data-type='method'><a href="module-Clients.html#.getClientPolicy">getClientPolicy</a></li><li data-type='method'><a href="module-Clients.html#.getClients">getClients</a></li><li data-type='method'><a href="module-Clients.html#.getClientUsageHistory">getClientUsageHistory</a></li><li data-type='method'><a href="module-Clients.html#.getSplashAuth">getSplashAuth</a></li><li data-type='method'><a href="module-Clients.html#.updateClientPolicy">updateClientPolicy</a></li><li data-type='method'><a href="module-Clients.html#.updateSplashAuth">updateSplashAuth</a></li></ul></li><li><a href="module-Config_Templates.html">Config_Templates</a><ul class='methods'><li data-type='method'><a href="module-Config_Templates.html#.bindTemplate">bindTemplate</a></li><li data-type='method'><a href="module-Config_Templates.html#.getConfigTemplates">getConfigTemplates</a></li><li data-type='method'><a href="module-Config_Templates.html#.removeConfigTemplate">removeConfigTemplate</a></li><li data-type='method'><a href="module-Config_Templates.html#.unbindTemplate">unbindTemplate</a></li></ul></li><li><a href="module-Custom.html">Custom</a><ul class='methods'><li data-type='method'><a href="module-Custom.html#.getClientPolicyForClients">getClientPolicyForClients</a></li><li data-type='method'><a href="module-Custom.html#.getClientsForDevices">getClientsForDevices</a></li><li data-type='method'><a href="module-Custom.html#.getClientsForNetwork">getClientsForNetwork</a></li><li data-type='method'><a href="module-Custom.html#.getClientsForNetworks">getClientsForNetworks</a></li><li data-type='method'><a href="module-Custom.html#.getClientsForOrg">getClientsForOrg</a></li><li data-type='method'><a href="module-Custom.html#.getNetworkIdForDeviceMac">getNetworkIdForDeviceMac</a></li></ul></li><li><a href="module-Devices.html">Devices</a><ul class='methods'><li data-type='method'><a href="module-Devices.html#.claimDevice">claimDevice</a></li><li data-type='method'><a href="module-Devices.html#.getDevice">getDevice</a></li><li data-type='method'><a href="module-Devices.html#.getDevices">getDevices</a></li><li data-type='method'><a href="module-Devices.html#.getPerfScore">getPerfScore</a></li><li data-type='method'><a href="module-Devices.html#.getUplinkStatus">getUplinkStatus</a></li><li data-type='method'><a href="module-Devices.html#.removeDevice">removeDevice</a></li><li data-type='method'><a href="module-Devices.html#.updateDevice">updateDevice</a></li></ul></li><li><a href="module-Group_Policies.html">Group_Policies</a><ul class='methods'><li data-type='method'><a href="module-Group_Policies.html#.getPolicies">getPolicies</a></li></ul></li><li><a href="module-Meraki.html">Meraki</a></li><li><a href="module-Meraki_Settings.html">Meraki/Settings</a></li><li><a href="module-MR_L3_Firewall.html">MR_L3_Firewall</a><ul class='methods'><li data-type='method'><a href="module-MR_L3_Firewall.html#.getL3FirewallRulesMR">getL3FirewallRulesMR</a></li><li data-type='method'><a href="module-MR_L3_Firewall.html#.updateL3FirewallRulesMR">updateL3FirewallRulesMR</a></li></ul></li><li><a href="module-MX_Cell_Firewall.html">MX_Cell_Firewall</a><ul class='methods'><li data-type='method'><a href="module-MX_Cell_Firewall.html#.getCellularFirewallRules">getCellularFirewallRules</a></li><li data-type='method'><a href="module-MX_Cell_Firewall.html#.updateCellularFirewallRules">updateCellularFirewallRules</a></li></ul></li><li><a href="module-MX_L3_Firewall.html">MX_L3_Firewall</a></li><li><a href="module-MX_VPN_Firewall.html">MX_VPN_Firewall</a><ul class='methods'><li data-type='method'><a href="module-MX_VPN_Firewall.html#.getVpnFirewallRules">getVpnFirewallRules</a></li><li data-type='method'><a href="module-MX_VPN_Firewall.html#.updateVpnFirewallRules">updateVpnFirewallRules</a></li></ul></li><li><a href="module-Networks.html">Networks</a><ul class='methods'><li data-type='method'><a href="module-Networks.html#.createNetwork">createNetwork</a></li><li data-type='method'><a href="module-Networks.html#.deleteNetwork">deleteNetwork</a></li><li data-type='method'><a href="module-Networks.html#.getAccessPolicies">getAccessPolicies</a></li><li data-type='method'><a href="module-Networks.html#.getAirmarshal">getAirmarshal</a></li><li data-type='method'><a href="module-Networks.html#.getBluetoothSettings">getBluetoothSettings</a></li><li data-type='method'><a href="module-Networks.html#.getNetwork">getNetwork</a></li><li data-type='method'><a href="module-Networks.html#.getTraffic">getTraffic</a></li><li data-type='method'><a href="module-Networks.html#.updateBluetoothSettings">updateBluetoothSettings</a></li><li data-type='method'><a href="module-Networks.html#.updateNetwork">updateNetwork</a></li></ul></li><li><a href="module-Organizations.html">Organizations</a><ul class='methods'><li data-type='method'><a href="module-Organizations.html#.claimOrderLicenseSerial">claimOrderLicenseSerial</a></li><li data-type='method'><a href="module-Organizations.html#.createOrganization">createOrganization</a></li><li data-type='method'><a href="module-Organizations.html#.createOrganizationClone">createOrganizationClone</a></li><li data-type='method'><a href="module-Organizations.html#.getInventory">getInventory</a></li><li data-type='method'><a href="module-Organizations.html#.getLicenseState">getLicenseState</a></li><li data-type='method'><a href="module-Organizations.html#.getOrganization">getOrganization</a></li><li data-type='method'><a href="module-Organizations.html#.getOrgDevices">getOrgDevices</a></li><li data-type='method'><a href="module-Organizations.html#.getSnmpSettings">getSnmpSettings</a></li><li data-type='method'><a href="module-Organizations.html#.getThirdPartyVpnPeers">getThirdPartyVpnPeers</a></li><li data-type='method'><a href="module-Organizations.html#.updateOrganization">updateOrganization</a></li><li data-type='method'><a href="module-Organizations.html#.updateSnmpSettings">updateSnmpSettings</a></li><li data-type='method'><a href="module-Organizations.html#.updateThirdPartyVpnPeers">updateThirdPartyVpnPeers</a></li></ul></li><li><a href="module-Pii.html">Pii</a><ul class='methods'><li data-type='method'><a href="module-Pii.html#.deletePiiRequest">deletePiiRequest</a></li><li data-type='method'><a href="module-Pii.html#.getPiiKeys">getPiiKeys</a></li><li data-type='method'><a href="module-Pii.html#.getPiiRequest">getPiiRequest</a></li><li data-type='method'><a href="module-Pii.html#.getPiiRequests">getPiiRequests</a></li><li data-type='method'><a href="module-Pii.html#.getSmDevicesForKey">getSmDevicesForKey</a></li><li data-type='method'><a href="module-Pii.html#.getSmOwnersForKey">getSmOwnersForKey</a></li><li data-type='method'><a href="module-Pii.html#.submitPiiRequest">submitPiiRequest</a></li></ul></li><li><a href="module-Proxy.html">Proxy</a></li><li><a href="module-SAML_Roles.html">SAML_Roles</a><ul class='methods'><li data-type='method'><a href="module-SAML_Roles.html#.createSamlRoles">createSamlRoles</a></li><li data-type='method'><a href="module-SAML_Roles.html#.deleteSamlRole">deleteSamlRole</a></li><li data-type='method'><a href="module-SAML_Roles.html#.getSamlRoles">getSamlRoles</a></li><li data-type='method'><a href="module-SAML_Roles.html#.getSamlRoles">getSamlRoles</a></li><li data-type='method'><a href="module-SAML_Roles.html#.updateSamlRole">updateSamlRole</a></li></ul></li><li><a href="module-SSIDs.html">SSIDs</a><ul class='methods'><li data-type='method'><a href="module-SSIDs.html#.getSsid">getSsid</a></li><li data-type='method'><a href="module-SSIDs.html#.getSsids">getSsids</a></li><li data-type='method'><a href="module-SSIDs.html#.updateSsid">updateSsid</a></li></ul></li><li><a href="module-Static_Routes.html">Static_Routes</a><ul class='methods'><li data-type='method'><a href="module-Static_Routes.html#.addStaticRoute">addStaticRoute</a></li><li data-type='method'><a href="module-Static_Routes.html#.deleteStaticRoute">deleteStaticRoute</a></li><li data-type='method'><a href="module-Static_Routes.html#.getStaticRoute">getStaticRoute</a></li><li data-type='method'><a href="module-Static_Routes.html#.getStaticRoutes">getStaticRoutes</a></li><li data-type='method'><a href="module-Static_Routes.html#.updateStaticRoute">updateStaticRoute</a></li></ul></li><li><a href="module-Switch_Ports.html">Switch_Ports</a><ul class='methods'><li data-type='method'><a href="module-Switch_Ports.html#.getSwitchPort">getSwitchPort</a></li><li data-type='method'><a href="module-Switch_Ports.html#.getSwitchPorts">getSwitchPorts</a></li><li data-type='method'><a href="module-Switch_Ports.html#.updateSwitchPort">updateSwitchPort</a></li></ul></li><li><a href="module-VLANs.html">VLANs</a><ul class='methods'><li data-type='method'><a href="module-VLANs.html#.addVlan">addVlan</a></li><li data-type='method'><a href="module-VLANs.html#.deleteVlan">deleteVlan</a></li><li data-type='method'><a href="module-VLANs.html#.getVlan">getVlan</a></li><li data-type='method'><a href="module-VLANs.html#.getVlans">getVlans</a></li><li data-type='method'><a href="module-VLANs.html#.updateVlan">updateVlan</a></li></ul></li></ul><h3>Classes</h3><ul><li><a href="module-Meraki-merakiService.html">merakiService</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Switch_Ports</h1>
+    
+
+    <!--container.tmpl-->
+
+
+
+
+
+<section>
+
+
+
+<header data-tmpl="container.tmpl">
+    
+      <h2>Module: Switch_Ports</h2>
+        
+            
+        
+    
+
+    
+      <div class="bs-callout bs-callout-default">
+        <h5>Members</h5>
+        <br />
+        <dl class="dl-horizontal methods-members">
+        <dt>Methods</dt><dd><ul>
+            <li><a href="#getSwitchPort">getSwitchPort</a></li>
+            
+            <li><a href="#getSwitchPorts">getSwitchPorts</a></li>
+            
+            <li><a href="#updateSwitchPort">updateSwitchPort</a></li>
+            </ul></dd></dl></div>
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Switch Ports</p></div>
+        
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="endpoints_switchPorts.js.html">switchPorts.js</a>:<a href="endpoints_switchPorts.js.html#line1">1</a>
+  </code>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-Switch_Ports">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="endpoints_switchPorts.js.html">switchPorts.js</a>:<a href="endpoints_switchPorts.js.html#line1">1</a>
+  </code>
+</div>
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * Switch Ports\n * @module Switch_Ports\n */","meta":{"filename":"switchPorts.js","lineno":1,"columnno":0,"path":"/Users/cory.guynn/dev/meraki-service/endpoints","code":{},"shortpath":"endpoints/switchPorts.js"},"description":"<p>Switch Ports</p>","kind":"module","name":"Switch_Ports","longname":"module:Switch_Ports","___id":"T000002R000210","___s":true,"attribs":"","id":"Switch_Ports","ancestors":[]}
+</pre>
+-->
+</div>
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="endpoints_switchPorts.js.html">switchPorts.js</a>:<a href="endpoints_switchPorts.js.html#line22">22</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id=".getSwitchPort">
+      <a href="#params-getSwitchPort"><span class="type-signature">(static) </span>getSwitchPort</a><span class="signature">(serial, portNum)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Return a switch port</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getSwitchPort">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-getSwitchPort" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>serial</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>portNum</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Return a switch port\n   * @memberof module:Switch_Ports\n   * @param {*} serial \n   * @param {*} portNum \n   */","meta":{"range":[431,567],"filename":"switchPorts.js","lineno":22,"columnno":2,"path":"/Users/cory.guynn/dev/meraki-service/endpoints","code":{"id":"astnode100003927","name":"getSwitchPort","type":"FunctionExpression"},"vars":{"":null},"shortpath":"endpoints/switchPorts.js"},"description":"<p>Return a switch port</p>","memberof":"module:Switch_Ports","params":[{"type":{"names":["*"]},"name":"serial"},{"type":{"names":["*"]},"name":"portNum"}],"name":"getSwitchPort","longname":"module:Switch_Ports.getSwitchPort","kind":"function","scope":"static","___id":"T000002R000213","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".getSwitchPort","signature":"<span class=\"signature\">(serial, portNum)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-Switch_Ports.html\">Switch_Ports</a>."]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="endpoints_switchPorts.js.html">switchPorts.js</a>:<a href="endpoints_switchPorts.js.html#line12">12</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id=".getSwitchPorts">
+      <a href="#params-getSwitchPorts"><span class="type-signature">(static) </span>getSwitchPorts</a><span class="signature">(serial)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Return the switch ports for a switch</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getSwitchPorts">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-getSwitchPorts" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>serial</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Return the switch ports for a switch\n   * @memberof module:Switch_Ports\n   * @param {*} serial \n   */","meta":{"range":[186,304],"filename":"switchPorts.js","lineno":12,"columnno":2,"path":"/Users/cory.guynn/dev/meraki-service/endpoints","code":{"id":"astnode100003903","name":"getSwitchPorts","type":"FunctionExpression"},"vars":{"":null},"shortpath":"endpoints/switchPorts.js"},"description":"<p>Return the switch ports for a switch</p>","memberof":"module:Switch_Ports","params":[{"type":{"names":["*"]},"name":"serial"}],"name":"getSwitchPorts","longname":"module:Switch_Ports.getSwitchPorts","kind":"function","scope":"static","___id":"T000002R000212","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".getSwitchPorts","signature":"<span class=\"signature\">(serial)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-Switch_Ports.html\">Switch_Ports</a>."]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="endpoints_switchPorts.js.html">switchPorts.js</a>:<a href="endpoints_switchPorts.js.html#line33">33</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id=".updateSwitchPort">
+      <a href="#params-updateSwitchPort"><span class="type-signature">(static) </span>updateSwitchPort</a><span class="signature">(serial, portNum, body)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Update a switch port</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-updateSwitchPort">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-updateSwitchPort" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>serial</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>portNum</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Update a switch port\n   * @memberof module:Switch_Ports\n   * @param {*} serial \n   * @param {*} portNum \n   * @param {*} body \n   */","meta":{"range":[716,867],"filename":"switchPorts.js","lineno":33,"columnno":2,"path":"/Users/cory.guynn/dev/meraki-service/endpoints","code":{"id":"astnode100003954","name":"updateSwitchPort","type":"FunctionExpression"},"vars":{"":null},"shortpath":"endpoints/switchPorts.js"},"description":"<p>Update a switch port</p>","memberof":"module:Switch_Ports","params":[{"type":{"names":["*"]},"name":"serial"},{"type":{"names":["*"]},"name":"portNum"},{"type":{"names":["*"]},"name":"body"}],"name":"updateSwitchPort","longname":"module:Switch_Ports.updateSwitchPort","kind":"function","scope":"static","___id":"T000002R000214","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".updateSwitchPort","signature":"<span class=\"signature\">(serial, portNum, body)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-Switch_Ports.html\">Switch_Ports</a>."]}
+</pre>
+-->
+</div>
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Jun 22 2018 12:29:42 GMT+0200 (CEST) using the LOKE theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
