@@ -5,7 +5,7 @@ const Meraki = require(".././meraki-service");
 
 const API_KEY =
   process.env.API_KEY || "2f301bccd61b6c642d250cd3f76e5eb66ebd170f"; // Sandbox API Key
-const API_URL = "https://api.meraki.com/api/v0"; //'http://localhost:8888' //"https://api.meraki.com/api/v0"; //
+const API_URL = "https://api.meraki.com/api/v0"; //'http://localhost:8888'
 
 const orgId = "549236";
 const netId = "L_643451796760560141";
@@ -14,7 +14,7 @@ const serial = "Q2HP-6Z82-NGDM";
 
 // PII ENV
 /*
-const API_KEY = 'be647eed3046542a895ea9ad07b7f7cef4c002de'; // Sandbox Demos
+const API_KEY = ''; // Sandbox Demos
 const orgId = '773901';
 const netId = 'N_660903245316632307';
 const deviceMac = '88:15:44:60:1c:1a';
