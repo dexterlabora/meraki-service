@@ -4,7 +4,7 @@
 
 A collection of methods to interact with the [Meraki Dashboard API](https://create.meraki.io/guides/dashboard-api/).
 
-[Meraki-Service JSdocs](https://dexterlabora.github.io/meraki-service/)
+[Documentation](https://dexterlabora.github.io/meraki-service/)
 
 # About
 
@@ -29,25 +29,23 @@ This service could have several breaking changes as it is being developed. You c
 
 ## Install
 
-Requires Node >= v8
-
-```bash
-
-```
+_Requires Node >= v8_
 
 `npm install https://github.com/dexterlabora/meraki-service.git`
 
 or (once published)
 
-```bash
-npm install meraki-service
-```
+`npm install meraki-service`
 
 ## Test
 
 An included test script will run an inventory of your organizations, networks, devices and group policies. Run this to confirm everything is working properly.
 
 `API_KEY=1234YourAPIKey node ./test/test`
+
+There are additional script samples in the file `./test/test-scripts`. Open the file to uncomment out sample scripts, then run from the command.
+
+`API_KEY=1234YourAPIKey ORG_ID=123 node ./test/test-scripts`
 
 ## Usage
 
@@ -130,3 +128,7 @@ $ curl -X GET \
   - Descriptions
   - Sample Code
 - implement proper tests
+
+## License
+
+Apache-v2.0
