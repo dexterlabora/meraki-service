@@ -1,6 +1,6 @@
 {
   "name": "meraki-service",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A Cisco Meraki Dashboard API service library. Uses Axios.",
   "main": "meraki-service.js",
   "scripts": {
@@ -13,7 +13,10 @@
     "Dashboard"
   ],
   "author": "Cory Guynn",
-  "license": "MIT",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=8.11.3"
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "json-bigint": "^0.2.3"

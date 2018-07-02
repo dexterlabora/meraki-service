@@ -32,16 +32,22 @@ This service could have several breaking changes as it is being developed. You c
 Requires Node >= v8
 
 ```bash
-npm install <this-repository>
+
 ```
 
 `npm install https://github.com/dexterlabora/meraki-service.git`
 
-or
+or (once published)
 
 ```bash
 npm install meraki-service
 ```
+
+## Test
+
+An included test script will run an inventory of your organizations, networks, devices and group policies. Run this to confirm everything is working properly.
+
+`API_KEY=1234YourAPIKey node ./test/test`
 
 ## Usage
 
