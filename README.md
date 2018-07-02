@@ -29,6 +29,8 @@ This service could have several breaking changes as it is being developed. You c
 
 ## Install
 
+Requires Node >= v8
+
 ```bash
 npm install <this-repository>
 ```
