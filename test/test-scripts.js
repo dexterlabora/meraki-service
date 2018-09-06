@@ -64,7 +64,7 @@ function createNetworkWithProxy() {
     },
 */
     data: {
-      name: "test-viaProxyService42",
+      name: "test-viaProxyService45",
       timeZone: "US/Central",
       type: "wireless",
       disableMyMerakiCom: false
@@ -80,7 +80,7 @@ function createNetworkWithProxy() {
       console.log("error creating network", e);
     });
 }
-//createNetworkWithProxy();
+createNetworkWithProxy();
 
 //meraki.getNetworks(orgId).then(res => console.log(res));
 

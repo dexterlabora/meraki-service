@@ -50,7 +50,7 @@ const handleBigInt = data => {
 const proxy = {
   proxy(options) {
     require("axios-debug-log");
-    return this.meraki(options).then(res => res);
+    return this.meraki(options).then(res => res.data);
     /*
     return this.meraki(options, { transformResponse: [handleBigInt] }).then(
       res => res.data
