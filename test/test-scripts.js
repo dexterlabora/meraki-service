@@ -64,7 +64,7 @@ function createNetworkWithProxy() {
     },
 */
     data: {
-      name: "test-viaProxyService45",
+      name: "test-viaProxyService47",
       timeZone: "US/Central",
       type: "wireless",
       disableMyMerakiCom: false
@@ -80,13 +80,12 @@ function createNetworkWithProxy() {
       console.log("error creating network", e);
     });
 }
-createNetworkWithProxy();
+//createNetworkWithProxy();
 
 //meraki.getNetworks(orgId).then(res => console.log(res));
 
-/*
 meraki.updateSsid("N_643451796760559911", 0, {
-  name: "viaTestScript-212",
+  name: "viaTestScript-21212",
   enabled: false,
   splashPage: "None",
   perClientBandwidthLimitUp: 0,
@@ -95,7 +94,6 @@ meraki.updateSsid("N_643451796760559911", 0, {
   ipAssignmentMode: "NAT mode",
   authMode: "open"
 });
-*/
 
 /*
 meraki.getNetworks(orgId).then(

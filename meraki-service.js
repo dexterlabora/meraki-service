@@ -112,11 +112,11 @@ class merakiService {
     this.meraki = axios.create({
       baseURL: this._baseUrl,
       //maxRedirects: 0,
-
+      /*
       validateStatus: function(status) {
         return status >= 200 && status <= 302;
       },
-
+      */
       headers: {
         "X-Cisco-Meraki-API-Key": this._apiKey,
         "Content-Type": "application/json"
@@ -129,18 +129,13 @@ class merakiService {
       if (!config.method) {
         return config;
       }
+
+      // force non GET requests to error on purpose, this allows for the redirect handler to reconstruct the request with new target URL
       if (config.method.toLowerCase() != "get") {
         config.validateStatus = function(status) {
           return status == 201; // Reject only if the status code 201
         };
       }
-      /*
-      if (config.method.toLowerCase() != "put") {
-        config.validateStatus = function(status) {
-          return status != 200; //
-        };
-      }
-      */
       return config;
     });
 
@@ -165,6 +160,7 @@ class merakiService {
         if (!error.config) {
           return _handleError(error);
         }
+        // check if using default "get" which is no method defined.
         if (!error.response.request.method) {
           if (error.response.status === 200) return error.response;
         }
