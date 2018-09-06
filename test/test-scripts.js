@@ -13,7 +13,7 @@ const serial = process.env.SERIAL || "";
 
 // Initialize Meraki
 //const meraki = new Meraki(API_KEY,API_URL);
-const meraki = new Meraki(API_KEY); // default settings
+const meraki = new Meraki(API_KEY, API_URL); // default settings
 
 // ********************
 // Various test scripts
@@ -24,20 +24,89 @@ const meraki = new Meraki(API_KEY); // default settings
 var url = meraki.baseUrl;
 console.log("API Base URL: ", url);
 
+/*
 meraki.getOrganizations().then(res => {
   console.log("Organizations: ", res);
 });
+*/
+
+/*
+function createNetwork() {
+  const data = {
+    name: "API Test - service scripts2",
+    timeZone: "Europe/Amsterdam",
+    tags: "test",
+    type: "wireless"
+  };
+  meraki
+    .createNetwork(orgId, data)
+    .then(res => {
+      console.log("network created", res);
+    })
+    .catch(e => {
+      console.log("error creating network", e);
+    });
+}
+createNetwork();
+meraki.getNetworks(orgId).then(res => console.log(res));
+*/
+
+//const debugHttp = require("debug-http");
+//debugHttp();
+
+function createNetworkWithProxy() {
+  const data = {
+    url: "/organizations/306267/networks",
+    method: "post",
+    /*
+    validateStatus: function(status) {
+      return status == 201; // Reject only if the status code 201
+    },
+*/
+    data: {
+      name: "test-viaProxyService42",
+      timeZone: "US/Central",
+      type: "wireless",
+      disableMyMerakiCom: false
+    }
+  };
+
+  meraki
+    .proxy(data)
+    .then(res => {
+      console.log("network created", res);
+    })
+    .catch(e => {
+      console.log("error creating network", e);
+    });
+}
+//createNetworkWithProxy();
+
+//meraki.getNetworks(orgId).then(res => console.log(res));
+
+/*
+meraki.updateSsid("N_643451796760559911", 0, {
+  name: "viaTestScript-212",
+  enabled: false,
+  splashPage: "None",
+  perClientBandwidthLimitUp: 0,
+  perClientBandwidthLimitDown: 0,
+  ssidAdminAccessible: false,
+  ipAssignmentMode: "NAT mode",
+  authMode: "open"
+});
+*/
 
 /*
 meraki.getNetworks(orgId).then(
-    res => {
-    console.log('Networks: ', res);
-    },
-    err => {
-        console.log(err);
-    });
+  res => {
+    console.log("Networks: ", res);
+  },
+  err => {
+    console.log(err);
+  }
+);
 */
-
 /*
 meraki.getClientUsageHistory(netId, clientMac).then(res => {
     console.log('getCliennUsageHistory', res);
@@ -102,21 +171,21 @@ meraki.getSwitchPorts(serial).then(res => {
 
 /*
 meraki.getAdmins(orgId).then(res => {
-    console.log('Admins: ', res);
+  console.log("Admins: ", res);
 });
 */
 
 /*
 const proxyOptions = {
-    url: '/organizations',
-    method: 'get',
-    headers: {
-        'X-Cisco-Meraki-API-Key': API_KEY,
-        'Content-Type': 'application/json'
-    }
-}
+  url: "/organizations",
+  method: "get",
+  headers: {
+    "X-Cisco-Meraki-API-Key": API_KEY,
+    "Content-Type": "application/json"
+  }
+};
 meraki.proxy(proxyOptions).then(res => {
-    console.log('Organizations proxied with custom headers: ', res);
+  console.log("Organizations proxied with custom headers: ", res.data);
 });
 */
 

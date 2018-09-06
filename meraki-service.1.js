@@ -25,27 +25,10 @@ $ Organizations:  [ { id: 549236, name: 'Meraki DevNet Sandbox' } ]
 
 const axios = require("axios");
 const JSONbig = require("json-bigint")({ storeAsString: true });
-/*
-var globalLog = require("global-request-logger");
-globalLog.initialize();
-
-globalLog.on("success", function(request, response) {
-  console.log("SUCCESS");
-  console.log("Request", request);
-  console.log("Response", response);
-});
-
-globalLog.on("error", function(request, response) {
-  console.log("ERROR");
-  console.log("Request", request);
-  console.log("Response", response);
-});
-*/
 
 // Meraki Error Handler (parses the error message within responses)
 function _handleError(e) {
   console.log("error in Meraki API call: ", e);
-
   if (e.message) {
     e = e.message;
   }
@@ -53,7 +36,7 @@ function _handleError(e) {
     if (e.response.data) {
       // Meraki specific error message
       if (e.response.data.errors) {
-        console.log("e.response.data.errors", e.response.data.errors[0]);
+        console.log(e.response.data.errors[0]);
         e = e.response.data.errors[0];
       }
     } else {
@@ -81,7 +64,6 @@ function _handleError(e) {
  * @class
  * @module Meraki
  */
-
 class merakiService {
   /**
    * Initialize a Meraki API Service
@@ -94,6 +76,7 @@ class merakiService {
     this._apiKey = process.env.API_KEY || apiKey;
     this._baseUrl =
       process.env.BASE_URL || baseUrl || "https://api.meraki.com/api/v0";
+    this._originalConfig;
 
     this.initMeraki();
   }
@@ -114,7 +97,7 @@ class merakiService {
       //maxRedirects: 0,
 
       validateStatus: function(status) {
-        return status >= 200 && status <= 302;
+        return status >= 200 && status <= 308;
       },
 
       headers: {
@@ -124,84 +107,58 @@ class merakiService {
       transformResponse: [JSONbig.parse]
     });
 
-    this.meraki.interceptors.request.use(config => {
-      //console.log("Interceptor request");
-      if (!config.method) {
+    // Log content type
+
+    this.meraki.interceptors.request.use(
+      config => {
+        if (config.method.toUpperCase() != "GET") {
+          this._originalConfig = config; //cache config
+        }
         return config;
+      },
+      error => {
+        console.log("request intercep error", error);
+        return error;
       }
-      if (config.method.toLowerCase() != "get") {
-        config.validateStatus = function(status) {
-          return status == 201; // Reject only if the status code 201
-        };
-      }
-      /*
-      if (config.method.toLowerCase() != "put") {
-        config.validateStatus = function(status) {
-          return status != 200; //
-        };
-      }
-      */
-      return config;
-    });
+    );
 
     this.meraki.interceptors.response.use(
       res => {
-        //console.log("Interceptor response");
-        return res;
-      },
-      error => {
-        //console.log("Interceptor error");
-        //console.log("err error.response.status", error.response.status);
-        //console.log("err error.response.headers", error.response.headers);
-        //console.log("err error.response.request.res.responseUrl", error.response.request.res.responseUrl);
-        //console.log("err error.config", error.config);
-        //console.log("err error.config.data", error.config.data);
-        //console.log("err error.config.method", error.config.method);
-        //console.log("error.response", error.response);
-        //console.log("error.config", error.config);
-        if (!error.response) {
-          return _handleError(error);
-        }
-        if (!error.config) {
-          return _handleError(error);
-        }
-        if (!error.response.request.method) {
-          if (error.response.status === 200) return error.response;
-        }
-
-        // Check if original request method is different, client was redirected
+        console.log("Meraki Service res status:", res.status);
+        console.log("intercept res.request.method", res.request.method);
+        console.log(
+          "Meraki Service res location:",
+          res.request.res.responseUrl
+        );
+        console.log(
+          "this._originalConfig.method.toUpperCase()",
+          this._originalConfig.method.toUpperCase()
+        );
         if (
-          error.response.request.method.toLowerCase() !=
-          error.config.method.toLowerCase()
+          //(res.status >= 300 && res.status <= 308) ||
+          res.status == 200 &&
+          this._originalConfig.method.toUpperCase() != "GET"
         ) {
-          console.log("REDIRECT - handling in meraki-service error");
-          // Recreate request using new responseUrl
-          //var options = error.config;
+          console.log("REDIRECT");
 
-          var options = {};
-          options.method = error.config.method || "get";
-          options.headers = error.config.headers;
-          options.data = error.config.data;
-          options.baseURL = "";
-          options.url = error.response.request.res.responseUrl; // SET NEW LOCATION
-          //console.log("redirect options", options);
+          // Copy original config options, then re-run API request with new target location
+          let options = {};
+          options.method = this._originalConfig.method;
+          options.headers = this._originalConfig.headers;
+          options.data = this._originalConfig.data;
+          options.url = res.request.res.responseUrl; // SET NEW LOCATION
+          console.log("redirect options", options);
           return this.meraki(options).then(res => {
             //console.log('redirect res', res);
-            return res;
+            return res.data;
           });
-        } else if (error.response.status === 200) {
-          console.log("redirect status", error.response.status);
-          console.log("response.data", error.response.data); // works
-          //console.log("response.data", error.response.request.res.data);
-          let response = {};
-          //response.status = error.response.status;
-          //response.headers = error.response.headers;
-          //response.data = error.response.data;
-          response = error.response;
-          return response;
         } else {
-          return _handleError(error);
+          return res;
         }
+      },
+      error => {
+        //console.log("err in res intercept", error);
+        return _handleError(error);
       }
     );
   }
