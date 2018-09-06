@@ -59,7 +59,7 @@ const Meraki = require('meraki-service');
 const meraki = new Meraki('YourAPIKey','https://api.meraki.com/api/v0');
 
 meraki.getOrganizations().then(res => {
-    console.log('Organizations: ', res.data);
+    console.log('Organizations: ', res);
 });
 
 $ node index.js
@@ -82,7 +82,7 @@ app.use('/api', jsonParser, function (req, res){
     const apiKey = req.headers['x-cisco-meraki-api-key'] || configs.apiKey;
     const meraki = new Meraki(apiKey,configs.apiUrl);
     meraki.proxy(options).then((response) => {
-      res.send(response.data);
+      res.send(response);
       res.end();
     });
 
