@@ -64,7 +64,7 @@ function createNetworkWithProxy() {
     },
 */
     data: {
-      name: "test-viaProxyService55",
+      name: "test-viaProxyService58",
       timeZone: "US/Central",
       type: "wireless",
       disableMyMerakiCom: false
